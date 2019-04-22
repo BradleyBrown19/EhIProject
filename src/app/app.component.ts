@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Comment } from './comments/comment.model';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  storedComments: Comment[] = [];
+
   title = 'AIGames';
 }
