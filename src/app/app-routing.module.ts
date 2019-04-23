@@ -11,6 +11,7 @@ const routes: Routes = [
     { path: '', component: LoginComponent},
     { path: 'signup', component: SignupComponent},
     { path: 'comment', component: CommentCreateComponent},
+    { path: 'edit-comment/:commentId', component: CommentCreateComponent}
 ]
 
 @NgModule({

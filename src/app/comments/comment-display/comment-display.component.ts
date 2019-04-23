@@ -32,4 +32,9 @@ export class CommentDisplayComponent implements OnInit, OnDestroy {
     ngOnDestroy() {
         this.commentsSub.unsubscribe();
     }
+
+    onDelete(commentId: string) {
+        this.commentsService.deletePost(commentId);
+    }
+
 }

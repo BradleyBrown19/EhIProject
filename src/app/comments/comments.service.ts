@@ -12,11 +12,16 @@ export class CommentService {
     constructor (private http: HttpClient) {}
 
     getComments() {
-        this.http.get<{message: string, comments: Comment[]}>('http://localhost:3000/api/comments')
+        this.http.get<{message: string, comments: Comment[]}>(
+            'http://localhost:3000/api/comments')
             .subscribe((commentData) => {
                 this.comments = commentData.comments;
                 this.commentsUpdated.next([...this.comments]);
             });
+    }
+
+    getComment(id: string) {
+        return {...this.comments.find(c => c._id == id)};
     }
 
     getCommentsUpdateListener() {
@@ -24,10 +29,27 @@ export class CommentService {
     }
 
     addComment(title: string, content: string) {
-        const comment: Comment = {title: title, content: content, id: null};
+        const comment: Comment = {title: title, content: content, _id: null};
 
-        this.comments.push(comment);
+        this.http.post<{message: string, commentId: string}>('http://localhost:3000/api/comments', comment)
+            .subscribe((commentData) => {
+                const commentId = commentData.commentId;
+                console.log(commentId);
+                comment._id = commentId;
+                this.comments.push(comment);
+                this.commentsUpdated.next([...this.comments]);
+            });
+    }
 
-        this.commentsUpdated.next([...this.comments]);
+    deletePost(commentId: string) {
+        this.http.delete("http://localhost:3000/api/comments/" + commentId)
+            .subscribe(() => {
+                const updatedComments = this.comments.filter(comment => 
+                    comment._id !== commentId
+                );
+                this.comments = updatedComments;
+                this.commentsUpdated.next([...this.comments]);
+                console.log("Post deleted");
+            });
     }
 }
