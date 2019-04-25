@@ -1,12 +1,12 @@
 <mat-card>
     <h1>Comments</h1>
-<form (submit)="onAddPost(commentForm)" #commentForm="ngForm">
+<form (submit)="onSavePost(commentForm)" #commentForm="ngForm">
     <mat-form-field>
-        <input matInput type="text" placeholder="Title" name="title" ngModel required #title="ngModel">
+        <input matInput type="text" placeholder="Title" name="title" [ngModel]="comment?.title" required #title="ngModel">
         <mat-error *ngIf="title.invalid">Please enter valid title.</mat-error>
     </mat-form-field>
     <mat-form-field>
-        <textarea matInput rows="4" placeholder="Comment" name="content" ngModel required #content="ngModel"></textarea>
+        <textarea matInput rows="4" placeholder="Comment" name="content" [ngModel]="comment?.content" required #content="ngModel"></textarea>
         <mat-error *ngIf="content.invalid">Please enter some content.</mat-error>
     </mat-form-field>
 

@@ -3,6 +3,7 @@ import { Comment } from '../comment.model';
 import { NgForm } from '@angular/forms';
 import { CommentService } from '../comments.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { routerNgProbeToken } from '@angular/router/src/router_module';
 
 @Component({
     selector: 'app-comment-create',
@@ -12,7 +13,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 export class CommentCreateComponent implements OnInit {
     private mode = 'create';
     private commentId: string;
-    private comment: Comment;
+    comment: Comment;
 
     constructor(public commentsService: CommentService, public route: ActivatedRoute) {}
 
@@ -29,12 +30,18 @@ export class CommentCreateComponent implements OnInit {
         });
     }
 
-    onAddPost(form: NgForm) {
+    onSavePost(form: NgForm) {
         if (form.invalid) {
             return;
         }
 
-        this.commentsService.addComment(form.value.title, form.value.content);
+        if (this.mode === 'create') {
+            this.commentsService.addComment(form.value.title, form.value.content);
+        } else {
+            this.commentsService.updateComment(this.commentId, form.value.title, form.value.content);
+        }
+
+        
         form.resetForm();
     }
 }

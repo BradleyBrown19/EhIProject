@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
-    res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE, OPTIONS");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, PUT, DELETE, OPTIONS");
     next();
 });
 
@@ -34,6 +34,18 @@ app.post('/api/comments', (req, res, next) => {
             commentId: result._id
         });
     });
+});
+
+app.put("/api/comments/:id", (req, res, next) =>  {
+    const comment = new Comment({
+        _id: req.body._id,
+        title: req.body.title,
+        content: req.body.content
+    });
+    Comment.updateOne({_id: req.params.id}, comment).then(result => {
+        console.log(result);
+        res.status(200).json({message: "Comment updated"});
+    })
 });
 
 app.get('/api/comments', (req, res, next) => {
