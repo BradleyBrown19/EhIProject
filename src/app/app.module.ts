@@ -16,6 +16,7 @@ import { LoginComponent } from './auth/login/login.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { SignupComponent } from './auth/signup/singup.component';
+import { NbThemeModule, NbLayoutModule, NbSidebarModule } from '@nebular/theme';
 
 
 
@@ -38,7 +39,11 @@ import { SignupComponent } from './auth/signup/singup.component';
     MatToolbarModule,
     MatExpansionModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NbThemeModule.forRoot({ name: 'default' }),
+    NbLayoutModule,
+    NbSidebarModule,
+    NbLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
