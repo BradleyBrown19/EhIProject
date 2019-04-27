@@ -3,7 +3,7 @@ import { Comment } from '../comment.model';
 import { NgForm } from '@angular/forms';
 import { CommentService } from '../comments.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { routerNgProbeToken } from '@angular/router/src/router_module';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-comment-create',
@@ -15,7 +15,7 @@ export class CommentCreateComponent implements OnInit {
     private commentId: string;
     comment: Comment;
 
-    constructor(public commentsService: CommentService, public route: ActivatedRoute) {}
+    constructor(public commentsService: CommentService, public route: ActivatedRoute, private router: Router) {}
 
     ngOnInit() {
         this.route.paramMap.subscribe((paramMap: ParamMap) => {
@@ -39,6 +39,7 @@ export class CommentCreateComponent implements OnInit {
             this.commentsService.addComment(form.value.title, form.value.content);
         } else {
             this.commentsService.updateComment(this.commentId, form.value.title, form.value.content);
+            this.router.navigateByUrl('/comment');
         }
 
         
