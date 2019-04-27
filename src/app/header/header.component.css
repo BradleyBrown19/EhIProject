@@ -1,22 +1,3 @@
-mat-toolbar {
-    margin-bottom: 2em;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-a {
-    text-decoration: none;
-    color: white;
-}
-
-ul {
-    display: flex;
-}
-
-.spacer {
-    flex: 1 1 auto;
+:host {
+    
 }

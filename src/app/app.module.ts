@@ -16,7 +16,7 @@ import { LoginComponent } from './auth/login/login.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { SignupComponent } from './auth/signup/singup.component';
-import { NbThemeModule, NbLayoutModule, NbSidebarModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbActionsModule, NbCardModule, NbSearchModule } from '@nebular/theme';
 
 
 
@@ -43,7 +43,10 @@ import { NbThemeModule, NbLayoutModule, NbSidebarModule } from '@nebular/theme';
     NbThemeModule.forRoot({ name: 'default' }),
     NbLayoutModule,
     NbSidebarModule,
-    NbLayoutModule
+    NbLayoutModule,
+    NbActionsModule,
+    NbCardModule,
+    NbSearchModule
   ],
   providers: [],
   bootstrap: [AppComponent]
