@@ -44,15 +44,16 @@ export class CommentService {
 
     updateComment(id: string, title: string, content: string) {
         const comment: Comment = {_id: id, title: title, content: content};
-        this.http.put('http://localhost:3000/api/comments/' + id, comment) 
+        this.http.put("http://localhost:3000/api/comments/" + id, comment) 
             .subscribe((response) => {
                 this.getComments();
             });
         }
 
     deletePost(commentId: string) {
-        this.http.delete("http://localhost:3000/api/comments/" + commentId)
+        this.http.delete("http://localhost:3000/api/comments/"+ commentId)
             .subscribe(() => {
+                console.log('Deleted');
                 const updatedComments = this.comments.filter(comment => 
                     comment._id !== commentId
                 );
