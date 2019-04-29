@@ -8,16 +8,18 @@ import { Router } from '@angular/router'
 @Injectable({providedIn: 'root'})
 export class CommentService {
     private comments: Comment[] = [];
-    private commentsUpdated = new Subject<Comment[]>();
+    private commentsUpdated = new Subject<{comments: Comment[], commCount: number}>();
 
-    constructor (private http: HttpClient) {}
+    constructor (private http: HttpClient, private router: Router) {}
 
-    getComments() {
-        this.http.get<{message: string, comments: Comment[]}>(
-            'http://localhost:3000/api/comments')
+    getComments(commentsPerPage: number, currentPage: number) {
+        const queryParams = `?pageSize=${commentsPerPage}&page=${currentPage}`;
+        this.http.get<{message: string, comments: Comment[], maxPosts: number}>(
+            'http://localhost:3000/api/comments' + queryParams)
             .subscribe((commentData) => {
                 this.comments = commentData.comments;
-                this.commentsUpdated.next([...this.comments]);
+                this.commentsUpdated.next({comments: [...this.comments], commCount: commentData.maxPosts});
+                this.router.navigate
             });
     }
 
@@ -34,11 +36,7 @@ export class CommentService {
 
         this.http.post<{message: string, commentId: string}>('http://localhost:3000/api/comments', comment)
             .subscribe((commentData) => {
-                const commentId = commentData.commentId;
-                console.log(commentId);
-                comment._id = commentId;
-                this.comments.push(comment);
-                this.commentsUpdated.next([...this.comments]);
+                this.router.navigate(["/comments"]);
             });
     }
 
@@ -46,20 +44,11 @@ export class CommentService {
         const comment: Comment = {_id: id, title: title, content: content};
         this.http.put("http://localhost:3000/api/comments/" + id, comment) 
             .subscribe((response) => {
-                this.getComments();
+                this.router.navigate(["/comments"]);
             });
         }
 
     deletePost(commentId: string) {
-        this.http.delete("http://localhost:3000/api/comments/"+ commentId)
-            .subscribe(() => {
-                console.log('Deleted');
-                const updatedComments = this.comments.filter(comment => 
-                    comment._id !== commentId
-                );
-                this.comments = updatedComments;
-                this.commentsUpdated.next([...this.comments]);
-                console.log("Post deleted");
-            });
+        return this.http.delete("http://localhost:3000/api/comments/"+ commentId);
     }
 }

@@ -12,3 +12,4 @@
     </mat-expansion-panel>
 </mat-accordion>
 <p class="info-text mat-body-1" *ngIf="comments.length == 0">No posts to show!</p>
+<mat-paginator [length]="totalComments" [pageSize]="commentsPerPage" [pageSizeOptions]="pageSizeOptions" (page)="onChangedPage($event)"></mat-paginator>
