@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 const commentRoutes = require('./routes/comments');
+const userRoutes = require('./routes/user');
 
 mongoose.connect("mongodb+srv://Brad:dQG5umBqyypMSrvp@cluster0-k54ab.gcp.mongodb.net/CoolAiProjects?retryWrites=true")
     .then(() => {
@@ -32,5 +33,7 @@ app.use((req, res, next) => {
   });
 
 app.use('/api/comments', commentRoutes);
+
+app.use('/api/user', userRoutes);
 
 module.exports = app;

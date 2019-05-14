@@ -1,0 +1,28 @@
+<h1>Fruit Classifier</h1>
+<nb-card id="buttons">
+    <nb-card-body>
+        <p>Upload an image below to have it classified!</p>
+        <form [formGroup]="form" (submit)="analyzeImage()">
+                <div>
+                    <button (click)="filePicker.click()" mat-stroke-button color="primary" type="button">Pick Image</button>
+                    <input type="file" #filePicker (change)="onImagePicked($event)">
+                </div>
+                <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview && form.get('image').valid">
+                        <img [src]="imagePreview" [alt]="form.value.title">
+                </div>
+                <button mat-raised-button color="accent" type="submit">Analyze!</button>
+            </form>
+    </nb-card-body>
+</nb-card>
+<nb-card id="results">
+    <div *ngIf="predictionLabel != undefined">
+        <h2>Guess</h2>
+        <h2>Fruit: {{predictionLabel}}</h2>
+        <h2>Confidence: {{predictionConfidence}}</h2>
+     </div>
+</nb-card>
+<nb-card id="info">
+    <div>
+        <p>This fruit classifier uses a CNN to classify over 80 different types of fruit with around 80% accuracy</p>
+    </div>
+</nb-card>

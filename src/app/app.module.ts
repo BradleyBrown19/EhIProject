@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, MatExpansionModule, MatPaginatorModule } from '@angular/material';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CommentDisplayComponent } from './comments/comment-display/comment-display.component';
@@ -17,6 +17,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SignupComponent } from './auth/signup/singup.component';
 import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbActionsModule, NbCardModule, NbSearchModule } from '@nebular/theme';
+import { FruitTypes } from './image-recognition/fruit-types/fruit-types.component';
 
 
 
@@ -27,7 +28,8 @@ import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbActionsModule, NbCard
     HeaderComponent,
     LoginComponent,
     SignupComponent,
-    CommentDisplayComponent
+    CommentDisplayComponent,
+    FruitTypes
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,7 @@ import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbActionsModule, NbCard
     MatToolbarModule,
     MatExpansionModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     NbThemeModule.forRoot({ name: 'default' }),
     NbLayoutModule,
