@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { mimeType } from './mime-type.validator';
+import { mimeType } from '../fruit-types/mime-type.validator';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ImageRecognitionService } from '../image-recognition.service';
@@ -8,11 +8,11 @@ import { elementStart } from '@angular/core/src/render3';
 import { Subscription } from 'rxjs';
 
 @Component({
-    selector: 'fruit-types',
-    templateUrl: './fruit-types.component.html',
-    styleUrls: ['./fruit-types.component.css']
+    selector: 'dog-breeds',
+    templateUrl: './dog-breeds.component.html',
+    styleUrls: ['./dog-breeds.component.css']
 })
-export class FruitTypes implements OnInit {
+export class DogBreeds implements OnInit {
     form: FormGroup;
     imagePreview: string;
     prediction: {'label': string, 'confidence': Number};
@@ -55,10 +55,10 @@ export class FruitTypes implements OnInit {
             return;
         }
 
-        const fruitImage = new FormData();
-        fruitImage.append("image", this.form.value.image)
+        const dogImage = new FormData();
+        dogImage.append("image", this.form.value.image)
 
-        this.imageRecognitionService.analyzeImage(fruitImage, this.imageRecognitionURL);
+        this.imageRecognitionService.analyzeImage(dogImage, this.imageRecognitionURL);
         
         this.form.reset();
     }

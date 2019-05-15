@@ -1,5 +1,5 @@
-<h1>Fruit Classifier</h1>
-<nb-card>
+<h1>Dog Breed Classifier</h1>
+<nb-card id="buttons">
     <nb-card-body>
         <p>Upload an image below to have it classified!</p>
         <form [formGroup]="form" (submit)="analyzeImage()">
@@ -17,12 +17,12 @@
 <nb-card id="results">
     <div *ngIf="predictionLabel != undefined">
         <h2>Guess</h2>
-        <h2>Fruit: {{predictionLabel}}</h2>
+        <h2>Breed: {{predictionLabel}}</h2>
         <h2>Confidence: {{predictionConfidence}}</h2>
      </div>
 </nb-card>
 <nb-card id="info">
     <div>
-        <p>This fruit classifier uses a CNN to classify over 80 different types of fruit with around 80% accuracy</p>
+        <p>TODO: Add content</p>
     </div>
 </nb-card>

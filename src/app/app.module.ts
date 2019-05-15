@@ -18,6 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SignupComponent } from './auth/signup/singup.component';
 import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbActionsModule, NbCardModule, NbSearchModule } from '@nebular/theme';
 import { FruitTypes } from './image-recognition/fruit-types/fruit-types.component';
+import { DogBreeds } from './image-recognition/dog-breeds/dog-breeds.component';
 
 
 
@@ -29,7 +30,8 @@ import { FruitTypes } from './image-recognition/fruit-types/fruit-types.componen
     LoginComponent,
     SignupComponent,
     CommentDisplayComponent,
-    FruitTypes
+    FruitTypes,
+    DogBreeds
   ],
   imports: [
     BrowserModule,
