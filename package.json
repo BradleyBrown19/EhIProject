@@ -32,6 +32,7 @@
     "mongoose-unique-validator": "^2.0.3",
     "multer": "^1.4.1",
     "nebular-icons": "^1.1.0",
+    "ng2-adsense": "^5.4.3",
     "npm": "^6.9.0",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",

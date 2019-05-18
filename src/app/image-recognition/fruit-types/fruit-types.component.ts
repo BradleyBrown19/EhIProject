@@ -18,7 +18,7 @@ export class FruitTypes implements OnInit {
     prediction: {'label': string, 'confidence': Number};
     predictionLabel: string;
     predictionConfidence: Number;
-    imageRecognitionURL: string = "http://127.0.0.1:5000/predict";
+    imageRecognitionURL: string = "http://127.0.0.1:5000/predict-fruit";
     private resultsSub: Subscription;
 
     constructor (private http: HttpClient, private router: Router, public imageRecognitionService: ImageRecognitionService) {}

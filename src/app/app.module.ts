@@ -20,6 +20,8 @@ import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbActionsModule, NbCard
 import { FruitTypes } from './image-recognition/fruit-types/fruit-types.component';
 import { DogBreeds } from './image-recognition/dog-breeds/dog-breeds.component';
 
+import { AdsenseModule } from 'ng2-adsense';
+
 
 
 @NgModule({
@@ -53,6 +55,10 @@ import { DogBreeds } from './image-recognition/dog-breeds/dog-breeds.component';
     NbCardModule,
     NbSearchModule,
     MatPaginatorModule,
+    AdsenseModule.forRoot({
+      adClient: "ca-pub-4251042441587231",
+      adSlot: 7259870550,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
