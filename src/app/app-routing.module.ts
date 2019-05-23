@@ -6,11 +6,12 @@ import { SignupComponent } from './auth/signup/singup.component';
 import { CommentDisplayComponent } from './comments/comment-display/comment-display.component';
 import { FruitTypes } from './image-recognition/fruit-types/fruit-types.component';
 import { DogBreeds } from './image-recognition/dog-breeds/dog-breeds.component';
+import { HomeScreenComponent } from './home-screen/home-screen.component';
 
 
 
 const routes: Routes = [
-    { path: '', component: LoginComponent},
+    { path: '', component: HomeScreenComponent},
     { path: 'signup', component: SignupComponent},
     { path: 'comment', component: CommentCreateComponent},
     { path: 'edit-comment/:commentId', component: CommentCreateComponent},

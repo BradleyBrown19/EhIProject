@@ -1,0 +1,19 @@
+nb-card {
+    background-color: rgb(252, 65, 96);
+    margin: auto;
+    margin-top: 1rem;
+    width: 90%;
+}
+
+h2 {
+    margin: auto;
+    color: white;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+img {
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
