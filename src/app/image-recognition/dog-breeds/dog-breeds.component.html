@@ -21,8 +21,30 @@
         <h2>Confidence: {{predictionConfidence}}</h2>
      </div>
 </nb-card>
-<nb-card id="info">
-    <div>
-        <p>TODO: Add content</p>
-    </div>
-</nb-card>
+<mat-accordion multi="true">
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+           Accuracy
+        </mat-expansion-panel-header>
+        <b></b>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+           Classes
+        </mat-expansion-panel-header>
+        
+
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+           Network Details
+        </mat-expansion-panel-header>
+        <ul>
+            <li>Type: Convolutional</li>
+            <li>Time to Train: 1 hour</li>
+            <li>Number of Classes: 120</li>
+        </ul>
+    </mat-expansion-panel>
+</mat-accordion>

@@ -17,7 +17,7 @@ export class FruitTypes implements OnInit {
     imagePreview: string;
     prediction: {'label': string, 'confidence': Number};
     predictionLabel: string;
-    predictionConfidence: Number;
+    predictionConfidence: string;
     imageRecognitionURL: string = "http://127.0.0.1:5000/predict-fruit";
     private resultsSub: Subscription;
 
@@ -34,7 +34,17 @@ export class FruitTypes implements OnInit {
         this.resultsSub = this.imageRecognitionService.getResultsUpdateListener()
             .subscribe((predictions: {label: string, confidence: Number}) => {
                 this.predictionLabel = predictions.label;
-                this.predictionConfidence = predictions.confidence;
+                if (predictions.confidence > 0.96) {
+                    this.predictionConfidence = 'High';
+                } else if (predictions.confidence > 0.85) {
+                    this.predictionConfidence = "Fairly confident";
+                } else if (predictions.confidence > 0.65) {
+                    this.predictionConfidence = "A little unsure";
+                } else if (predictions.confidence > 0.65) {
+                    this.predictionConfidence = "This is basically a total guess";
+                } else {
+                    this.predictionConfidence = "This is basically a total guess";
+                }
             });
     };
 

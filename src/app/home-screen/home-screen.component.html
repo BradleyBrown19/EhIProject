@@ -1,12 +1,42 @@
+<nb-layout>
+<nb-layout-column>
 <nb-card>
     <h2>Feature of the Week</h2>
     <img [src]="weeklyImage" height="120" width="100">
     <h2>{{weeklyfeature}}</h2>
-    <button mat-raised-button color="primary" [routerLink]="routerLink">Try it out!</button>
+    <button mat-raised-button [routerLink]="routerLink">Try it out!</button>
 </nb-card>
 <nb-card>
-    <nb-card-header>Bubble Maps</nb-card-header>
-      <nb-card-body>
-        <div echarts class="echarts"></div>
-        </nb-card-body>
+    <nb-card-header>Games</nb-card-header>
+    <drag-scroll>
+        <nb-card class="carousel-item" drag-scroll-item><i class="fas fa-dog"></i></nb-card>
+        <nb-card class="carousel-item" drag-scroll-item><i class="fas fa-apple-alt"></i></nb-card>
+        <nb-card class="carousel-item" drag-scroll-item><i class="fas fa-camera"></i></nb-card>
+        <nb-card class="carousel-item" drag-scroll-item><i class="fas fa-file-word"></i></nb-card>
+    </drag-scroll>
 </nb-card>
+<nb-card>
+    <nb-card-header>Games2</nb-card-header>
+    <drag-scroll>
+        <nb-card class="carousel-item" drag-scroll-item><i class="fas fa-dog"></i></nb-card>
+        <nb-card class="carousel-item" drag-scroll-item><i class="fas fa-apple-alt"></i></nb-card>
+        <nb-card class="carousel-item" drag-scroll-item><i class="fas fa-camera"></i></nb-card>
+        <nb-card class="carousel-item" drag-scroll-item><i class="fas fa-file-word"></i></nb-card>
+    </drag-scroll>
+</nb-card>
+<nb-card>
+    <button id="random-game" mat-fab (click)="randomGame()">
+        <lib-slot-machine-button [activeOnHover]="true">
+            <lib-slot-machine-wheel>
+              <div class="idle part">Click to go!</div>
+              <div class="active part">Random Game</div>
+            </lib-slot-machine-wheel>
+          </lib-slot-machine-button>
+    </button>
+</nb-card>
+</nb-layout-column>
+<nb-layout-footer>
+    Copyright @ Bradley Brown 2019. All rights reserverd. 
+</nb-layout-footer>
+
+</nb-layout>

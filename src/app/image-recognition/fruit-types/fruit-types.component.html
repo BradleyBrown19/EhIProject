@@ -21,8 +21,30 @@
         <h2>Confidence: {{predictionConfidence}}</h2>
      </div>
 </nb-card>
-<nb-card id="info">
-    <div>
-        <p>This fruit classifier uses a CNN to classify over 80 different types of fruit with around 80% accuracy</p>
-    </div>
-</nb-card>
+<mat-accordion multi="true">
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+           Accuracy
+        </mat-expansion-panel-header>
+        <b>80.7%</b>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+           Classes
+        </mat-expansion-panel-header>
+        Crimson Snow, Golden, Golden-Red, Granny Smith, Pink Lady, Red, Red Delicious), Apricot, Avocado, Avocado ripe, Banana (Yellow, Red, Lady Finger), Cactus fruit, Cantaloupe (2 varieties), Carambula, Cherry (different varieties, Rainier), Cherry Wax (Yellow, Red, Black), Chestnut, Clementine, Cocos, Dates, Granadilla, Grape (Blue, Pink, White (different varieties)), Grapefruit (Pink, White), Guava, Hazelnut, Huckleberry, Kiwi, Kaki, Kohlrabi, Kumsquats, Lemon (normal, Meyer), Lime, Lychee, Mandarine, Mango, Mangostan, Maracuja, Melon Piel de Sapo, Mulberry, Nectarine, Orange, Papaya, Passion fruit, Peach (different varieties), Pepino, Pear (different varieties, Abate, Kaiser, Monster, Red, Williams), Pepper (Red, Green, Yellow), Physalis (normal, with Husk), Pineapple (normal, Mini), Pitahaya Red, Plum (different varieties), Pomegranate, Pomelo Sweetie, Quince, Rambutan, Raspberry, Redcurrant, Salak, Strawberry (normal, Wedge), Tamarillo, Tangelo, Tomato (different varieties, Maroon, Cherry Red), Walnut.
+
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+           Network Details
+        </mat-expansion-panel-header>
+        <ul>
+            <li>Type: Convolutional</li>
+            <li>Time to Train: 20 mins</li>
+            <li>Number of Classes: 86</li>
+        </ul>
+    </mat-expansion-panel>
+</mat-accordion>

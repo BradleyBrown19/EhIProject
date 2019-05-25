@@ -1,3 +1,14 @@
+nb-action {
+    font-size: 3em;
+    color: #FF7F50;
+    background-color: blue;
+}
+
+i:hover {
+    font-size: 1.5em;
+}
+
 b {
-    color: rgb(105, 12, 105);
+    color: black;
+    font-size: 25px;
 }
