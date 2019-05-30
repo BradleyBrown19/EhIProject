@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { Simplify, ISimplifyArrayPoint} from 'simplify-ts';
 
 import { MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, MatExpansionModule, MatPaginatorModule } from '@angular/material';
 import {MatMenuModule} from '@angular/material/menu';
@@ -21,6 +22,7 @@ import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbActionsModule, NbCard
 import { FruitTypes } from './image-recognition/fruit-types/fruit-types.component';
 import { DogBreeds } from './image-recognition/dog-breeds/dog-breeds.component';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
+import { DrawingScreen } from './pictionarAI/drawing-screen/drawing-screen.component';
 
 import { AdsenseModule } from 'ng2-adsense';
 
@@ -34,7 +36,8 @@ import { AdsenseModule } from 'ng2-adsense';
     CommentDisplayComponent,
     FruitTypes,
     DogBreeds,
-    HomeScreenComponent
+    HomeScreenComponent,
+    DrawingScreen
   ],
   imports: [
     BrowserModule,

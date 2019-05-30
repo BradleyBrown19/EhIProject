@@ -5,6 +5,7 @@ import { CommentDisplayComponent } from './comments/comment-display/comment-disp
 import { FruitTypes } from './image-recognition/fruit-types/fruit-types.component';
 import { DogBreeds } from './image-recognition/dog-breeds/dog-breeds.component';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
+import { DrawingScreen } from './pictionarAI/drawing-screen/drawing-screen.component';
 
 
 
@@ -13,7 +14,8 @@ const routes: Routes = [
     { path: 'comment', component: CommentCreateComponent},
     { path: 'edit-comment/:commentId', component: CommentCreateComponent},
     { path: 'fruit-types', component: FruitTypes },
-    { path: 'dog-breeds', component: DogBreeds }
+    { path: 'dog-breeds', component: DogBreeds },
+    { path: 'test', component: DrawingScreen}
 ]
 
 @NgModule({
@@ -21,4 +23,5 @@ const routes: Routes = [
     exports: [RouterModule]
 })
 
-export class AppRoutingModule {}
+export class AppRoutingModule { 
+}

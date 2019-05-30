@@ -56,6 +56,7 @@ export class DogBreeds implements OnInit {
         }
 
         const dogImage = new FormData();
+        console.log(this.form.value.image);
         dogImage.append("image", this.form.value.image)
 
         this.imageRecognitionService.analyzeImage(dogImage, this.imageRecognitionURL);

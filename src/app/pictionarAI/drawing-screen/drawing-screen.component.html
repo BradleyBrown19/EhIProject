@@ -1,0 +1,11 @@
+<h1>Drawing screen</h1>
+<canvas #canvas id="canvas"></canvas>
+<button mat-button-raised (click)="onSubmitCanvas()"></button>
+<nb-card id="results">
+    <div *ngIf="prediction != undefined">
+        <h2>Guess</h2>
+        <h2>Picture: {{prediction.label}}</h2>
+        <h2>Confidence: {{prediction.confidence}}</h2>
+     </div>
+</nb-card>
+<img src="" id="test-image">
