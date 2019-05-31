@@ -11,8 +11,13 @@
 
         </nb-card-header>
 
-        <nb-card-body *ngIf="myModal.getData().image">
-            <img src="myModal.getData().image">
+        <nb-card-body>
+            <div *ngIf="myModal.getData().win == false">
+            <h2>Final Guess: {{ myModal.getData().guess }}</h2>
+            </div>
+            <div *ngIf="myModal.getData().win == true">
+                <h2>You successfully drew a {{ myModal.getData().guess }}</h2>
+            </div>
         </nb-card-body>
 
         <nb-card-footer>

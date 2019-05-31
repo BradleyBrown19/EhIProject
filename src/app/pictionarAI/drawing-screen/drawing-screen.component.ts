@@ -29,7 +29,7 @@ export class DrawingScreen implements AfterViewInit, OnInit {
 
     ngOnInit() {
       const source = interval(1000);
-      this.time = 5;
+      this.time = 20;
       let randomInt = Math.floor(Math.random() * 340);
       this.currentPic = this.classes[randomInt];
       this.subscription = source.subscribe(val => this.onSubmitCanvas());
@@ -163,9 +163,10 @@ export class DrawingScreen implements AfterViewInit, OnInit {
     }
 
     gameOver(win) {
-      const obj: {win: boolean, image: String} = {
+      const obj: {win: boolean, image: String, guess: String} = {
         win: true,
-        image: (document.getElementById('canvas') as HTMLCanvasElement).toDataURL()
+        image: (document.getElementById('canvas') as HTMLCanvasElement).toDataURL(),
+        guess: this.prediction.label
       };
       //open up console with win or lose message and play again or quit form
         if (win) {
