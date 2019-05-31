@@ -17,6 +17,7 @@ import { HeaderComponent } from './header/header.component';
 import { DragScrollModule } from 'ngx-drag-scroll';
 import { SlotMachineButtonModule } from 'ng-slot-machine-button';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbActionsModule, NbCardModule, NbSearchModule } from '@nebular/theme';
 import { FruitTypes } from './image-recognition/fruit-types/fruit-types.component';
@@ -26,6 +27,8 @@ import { DrawingScreen } from './pictionarAI/drawing-screen/drawing-screen.compo
 
 import { AdsenseModule } from 'ng2-adsense';
 
+import { NgxSmartModalModule, NgxSmartModalService } from 'ngx-smart-modal';
+import { EndPictionaraiModal } from './pictionarAI/game-over-modal/modal.component';
 
 
 @NgModule({
@@ -37,7 +40,8 @@ import { AdsenseModule } from 'ng2-adsense';
     FruitTypes,
     DogBreeds,
     HomeScreenComponent,
-    DrawingScreen
+    DrawingScreen,
+    EndPictionaraiModal
   ],
   imports: [
     BrowserModule,
@@ -62,12 +66,13 @@ import { AdsenseModule } from 'ng2-adsense';
     DragScrollModule,
     SlotMachineButtonModule,
     MatMenuModule,
+    NgxSmartModalModule.forRoot(),
     AdsenseModule.forRoot({
       adClient: "ca-pub-4251042441587231",
       adSlot: 7259870550,
     }),
   ],
-  providers: [],
+  providers: [NgxSmartModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

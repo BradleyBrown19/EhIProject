@@ -15,7 +15,7 @@ const routes: Routes = [
     { path: 'edit-comment/:commentId', component: CommentCreateComponent},
     { path: 'fruit-types', component: FruitTypes },
     { path: 'dog-breeds', component: DogBreeds },
-    { path: 'test', component: DrawingScreen}
+    { path: 'drawing-canvas', component: DrawingScreen}
 ]
 
 @NgModule({

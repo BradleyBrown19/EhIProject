@@ -1,11 +1,18 @@
-<h1>Drawing screen</h1>
+<h1>PictionarAI</h1>
+<nb-card>
+<nb-card-header>
+    <h2>Trying to draw: {{currentPic}}</h2>
+    <h3>Time Left: {{time}}</h3>
+</nb-card-header>
+<div id="container-canvas">
 <canvas #canvas id="canvas"></canvas>
-<button mat-button-raised (click)="onSubmitCanvas()"></button>
-<nb-card id="results">
-    <div *ngIf="prediction != undefined">
-        <h2>Guess</h2>
-        <h2>Picture: {{prediction.label}}</h2>
-        <h2>Confidence: {{prediction.confidence}}</h2>
-     </div>
+</div>
+<nb-card-footer>
+    <h2 *ngIf="prediction != undefined">Computer's Guess: {{prediction.label}}</h2>
+</nb-card-footer>
 </nb-card>
-<img src="" id="test-image">
+<div>
+<button mat-raised-button type="submit" (click)="resetCanvas()">Reset Canvas</button>
+<button (click)="testModal()">Open myModal</button>
+<end-game-modal></end-game-modal>
+</div>

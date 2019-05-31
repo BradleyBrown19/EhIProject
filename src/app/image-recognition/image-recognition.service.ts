@@ -15,7 +15,6 @@ export class ImageRecognitionService {
     }
 
     analyzeImage(image: any, url: string) {
-        console.log(url);
         this.http.post<{'success': any, 'predictions': {'label': string, 'confidence': Number}}>(url, image)
         .subscribe(result => {
             this.prediction = result.predictions;

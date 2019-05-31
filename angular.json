@@ -26,7 +26,8 @@
               "./node_modules/@nebular/theme/styles/prebuilt/default.css",
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.css",
-              "./node_modules/nebular-icons/scss/nebular-icons.scss"
+              "./node_modules/nebular-icons/scss/nebular-icons.scss",
+              "src/ngx-smart-modal.css" 
             ],
             "scripts": [],
             "es5BrowserSupport": true
