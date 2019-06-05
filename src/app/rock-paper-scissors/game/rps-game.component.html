@@ -1,0 +1,17 @@
+<div id="container">
+    <h1>Rock, paper, scissors!</h1>
+    <mat-grid-list cols="2" rowHeight="50px">
+        <mat-grid-tile><h1>Wins: {{playerWins}}</h1></mat-grid-tile>
+        <mat-grid-tile><h1>Wins: {{computerWins}}</h1></mat-grid-tile>
+        <mat-grid-tile rowspan="10">
+                <div><video #video id="video" width="533" height="400" autoplay></video></div>
+        </mat-grid-tile>
+        <mat-grid-tile rowspan="10">
+                <div id="move-background"><img [src]="computerMove" height="400" width="400"></div>
+        </mat-grid-tile>
+        <mat-grid-tile><h1>{{prediction}}</h1></mat-grid-tile>
+        <mat-grid-tile><h1>{{moveName}}</h1></mat-grid-tile>
+        <mat-grid-tile colspan="2" rowspan="2"><h1 id="winner">{{winner}}</h1></mat-grid-tile>
+    </mat-grid-list>
+    <canvas #canvas id="canvas" width="640" height="480"></canvas>
+</div>

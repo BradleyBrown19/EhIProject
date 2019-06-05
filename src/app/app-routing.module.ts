@@ -6,6 +6,7 @@ import { FruitTypes } from './image-recognition/fruit-types/fruit-types.componen
 import { DogBreeds } from './image-recognition/dog-breeds/dog-breeds.component';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
 import { DrawingScreen } from './pictionarAI/drawing-screen/drawing-screen.component';
+import { RPSGame } from './rock-paper-scissors/game/rps-game.components';
 
 
 
@@ -15,7 +16,8 @@ const routes: Routes = [
     { path: 'edit-comment/:commentId', component: CommentCreateComponent},
     { path: 'fruit-types', component: FruitTypes },
     { path: 'dog-breeds', component: DogBreeds },
-    { path: 'drawing-canvas', component: DrawingScreen}
+    { path: 'drawing-canvas', component: DrawingScreen},
+    { path: 'rps-game', component: RPSGame}
 ]
 
 @NgModule({

@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { Simplify, ISimplifyArrayPoint} from 'simplify-ts';
 
-import { MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, MatExpansionModule, MatPaginatorModule } from '@angular/material';
+import { MatInputModule, MatGridListModule, MatCardModule, MatButtonModule, MatToolbarModule, MatExpansionModule, MatPaginatorModule } from '@angular/material';
 import {MatMenuModule} from '@angular/material/menu';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -29,6 +29,7 @@ import { AdsenseModule } from 'ng2-adsense';
 
 import { NgxSmartModalModule, NgxSmartModalService } from 'ngx-smart-modal';
 import { EndPictionaraiModal } from './pictionarAI/game-over-modal/modal.component';
+import { RPSGame } from './rock-paper-scissors/game/rps-game.components';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { EndPictionaraiModal } from './pictionarAI/game-over-modal/modal.compone
     DogBreeds,
     HomeScreenComponent,
     DrawingScreen,
-    EndPictionaraiModal
+    EndPictionaraiModal,
+    RPSGame
   ],
   imports: [
     BrowserModule,
@@ -66,6 +68,7 @@ import { EndPictionaraiModal } from './pictionarAI/game-over-modal/modal.compone
     DragScrollModule,
     SlotMachineButtonModule,
     MatMenuModule,
+    MatGridListModule,
     NgxSmartModalModule.forRoot(),
     AdsenseModule.forRoot({
       adClient: "ca-pub-4251042441587231",

@@ -17,7 +17,7 @@
 <nb-card id="results">
     <div *ngIf="predictionLabel != undefined">
         <h2>Guess</h2>
-        <h2>Breed: {{predictionLabel}}</h2>
+        <h2>Breed: {{predictionLabel.substr(10)}}</h2>
         <h2>Confidence: {{predictionConfidence}}</h2>
      </div>
 </nb-card>
