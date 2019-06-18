@@ -8,17 +8,17 @@ import { elementStart } from '@angular/core/src/render3';
 import { Subscription } from 'rxjs';
 
 @Component({
-    selector: 'fruit-types',
-    templateUrl: './fruit-types.component.html',
-    styleUrls: ['./fruit-types.component.css']
+    selector: 'attractiveness',
+    templateUrl: './attractiveness.component.html',
+    styleUrls: ['./attractiveness.component.css']
 })
-export class FruitTypes implements OnInit {
+export class AttractivenessRating implements OnInit {
     form: FormGroup;
     imagePreview: string;
     prediction: {'label': string, 'confidence': Number};
     predictionLabel: string;
-    predictionConfidence: string;
-    imageRecognitionURL: string = "http://127.0.0.1:5000/predict-rock";
+    predictionConfidence: Number;
+    imageRecognitionURL: string = "http://127.0.0.1:5000/predict-attract";
     private resultsSub: Subscription;
 
     constructor (private http: HttpClient, private router: Router, public imageRecognitionService: ImageRecognitionService) {}
@@ -34,6 +34,8 @@ export class FruitTypes implements OnInit {
         this.resultsSub = this.imageRecognitionService.getResultsUpdateListener()
             .subscribe((predictions: {label: string, confidence: Number}) => {
                 this.predictionLabel = predictions.label;
+                this.predictionConfidence = predictions.confidence;
+                /*
                 if (predictions.confidence > 0.96) {
                     this.predictionConfidence = 'High';
                 } else if (predictions.confidence > 0.85) {
@@ -45,6 +47,7 @@ export class FruitTypes implements OnInit {
                 } else {
                     this.predictionConfidence = "This is basically a total guess";
                 }
+                */
             });
     };
 

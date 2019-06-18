@@ -1,12 +1,73 @@
-
-<nb-actions class="header-elements" id="action-bar" size="large">
-    <nb-action><b>CoolAIGames</b></nb-action>
-    <nb-action routerLink=""><i class="fas fa-home"></i></nb-action>
-    <nb-action routerLink="comment"><i class="fas fa-comments"></i></nb-action>
-    <nb-action><i class="fas fa-camera-retro"></i></nb-action>
-    <nb-action routerLink="fruit-types"><i class="fas fa-apple-alt"></i></nb-action>
-    <nb-action routerLink="dog-breeds"><i class="fas fa-dog"></i></nb-action>
-    <nb-action routerLink="drawing-canvas"><i class="fas fa-paint-brush"></i></nb-action>
-    <nb-action routerLink="rps-game"><i class="fas fa-hand-scissors"></i></nb-action>
-    <nb-action><nb-search type="rotate-layout"></nb-search></nb-action>
-</nb-actions>
+<ul>
+    <li>
+        <h1> Eh I Games </h1>
+    </li>
+    <li>
+            <button routerLink="" mat-icon-button aria-label="Example icon-button with a menu">
+                    <h1><i class="fas fa-home"></i></h1>
+                        </button>
+    </li>
+    <li>
+            <button mat-icon-button [matMenuTriggerFor]="menuGames" aria-label="Example icon-button with a menu">
+                    <h1><i class="fas fa-gamepad"></i></h1>
+                        </button>
+                        <mat-menu #menuGames="matMenu">
+                            <button mat-menu-item routerLink="drawing-canvas">
+                                <i class="fas fa-paint-brush"></i>
+                                <span>PictionarAI</span>
+                            </button>
+                            <button mat-menu-item routerLink="rps-preview">
+                                    <i class="fas fa-hand-scissors"></i>
+                                <span>Rock, paper, scissors</span>
+                            </button>
+                            <button mat-menu-item routerLink="madlibs-scifi">
+                                <i class="fas fa-book"></i>
+                            <span>MadLibs</span>
+                           </button>
+                            </mat-menu>
+    </li>
+    <li>
+            <button mat-icon-button [matMenuTriggerFor]="menuProjects" aria-label="Example icon-button with a menu">
+                    <h1><i class="fas fa-laptop-code"></i></h1>
+                        </button>
+                        <mat-menu #menuProjects="matMenu">
+                            <button mat-menu-item routerLink="dog-breeds">
+                                <i class="fas fa-dog"></i>
+                                <span>Dog Classifier</span>
+                            </button>
+                            <button mat-menu-item routerLink="attractiveness">
+                                    <i class="fas fa-heart"></i>
+                                <span>Attractiveness Score</span>
+                            </button>
+                            </mat-menu>
+    </li>
+    <li>
+            <button mat-icon-button [matMenuTriggerFor]="menuBlog" aria-label="Example icon-button with a menu">
+                    <h1><i class="fas fa-comments"></i></h1>
+                        </button>
+                        <mat-menu #menuBlog="matMenu">
+                            <button mat-menu-item>
+                                <i class="fas fa-pen"></i>
+                                <span>Posts</span>
+                            </button>
+                            <button routerLink="comment" mat-menu-item>
+                                    <i class="far fa-comment"></i>
+                                <span>Comments</span>
+                            </button>
+                            </mat-menu>
+    </li>
+    <li>
+            <button mat-icon-button [matMenuTriggerFor]="menuAbout" aria-label="Example icon-button with a menu">
+                    <h1><i class="far fa-address-card"></i></h1>
+                        </button>
+                        <mat-menu #menuAbout="matMenu">
+                            <button mat-menu-item>
+                                <i class="fab fa-canadian-maple-leaf"></i>
+                                <span>About Eh I</span>
+                            </button>
+                        </mat-menu>
+    </li>
+    <li>
+        <nb-search type="rotate-layout"></nb-search>
+    </li>
+</ul>

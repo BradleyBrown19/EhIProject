@@ -73,7 +73,7 @@ export class RPSGame implements AfterViewInit, OnInit {
             if (result.predictions.label == 'rock') {
                 this.rockPercentage = result.predictions.confidence;
             }
-            if (this.rockPercentage > 0.7) {
+            if (this.rockPercentage > 0.85) {
                 this.startGame();
                 this.subscription.unsubscribe();
             }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { mimeType } from '../fruit-types/mime-type.validator';
+import { mimeType } from '../attractiveness/mime-type.validator';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ImageRecognitionService } from '../image-recognition.service';

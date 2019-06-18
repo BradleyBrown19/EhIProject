@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class HomeScreenComponent {
     weeklyfeature: String = 'Dog Image Classifier'
-    weeklyImage: String = '../../assets/images/dogPrint.png'
+    weeklyImage: String = '../../assets/images/dog.png'
     routerLink: String = 'dog-breeds'
     games: any[] = ['/dog-breeds', '/fruit-types']
 

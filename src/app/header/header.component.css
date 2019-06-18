@@ -1,14 +1,31 @@
-nb-action {
-    font-size: 3em;
-    color: #FF7F50;
-    background-color: blue;
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-i:hover {
+li {
+    float: left;
+    padding-top: 1em;
+    margin-right: 4em;
+    text-align: center;
+}
+
+h1 {
     font-size: 1.5em;
+}
+
+i {
+    margin: 0em;
+    font-size: 3em;
+    color: #FF7F50
 }
 
 b {
     color: black;
     font-size: 25px;
+}
+
+nb-search {
+    font-size: 2.7em;
 }

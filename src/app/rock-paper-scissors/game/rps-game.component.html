@@ -1,8 +1,8 @@
 <div id="container">
-    <h1>Rock, paper, scissors!</h1>
+    <h1 id="title">Rock, paper, scissors!</h1>
     <mat-grid-list cols="2" rowHeight="50px">
-        <mat-grid-tile><h1>Wins: {{playerWins}}</h1></mat-grid-tile>
-        <mat-grid-tile><h1>Wins: {{computerWins}}</h1></mat-grid-tile>
+        <mat-grid-tile><h2>Wins: {{playerWins}}</h2></mat-grid-tile>
+        <mat-grid-tile><h2>Wins: {{computerWins}}</h2></mat-grid-tile>
         <mat-grid-tile rowspan="10">
                 <div><video #video id="video" width="533" height="400" autoplay></video></div>
         </mat-grid-tile>
