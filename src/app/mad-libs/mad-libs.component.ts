@@ -36,7 +36,7 @@ export class MadLibs implements OnInit {
         "url('../../../assets/backgrounds/scifi-background.jpg')",
         "url('../../../assets/backgrounds/religious-background.jpg')",
         "url('../../../assets/backgrounds/politics-background.jpg')",
-        "url('../../../assets/backgrounds/news-background.jpg')"
+        "url('../../../assets/backgrounds/madlibs-news.png')"
     ]
     imageBackgroundURL: string = "url('../../../assets/backgrounds/scifi-background.jpg')";
 
@@ -45,6 +45,7 @@ export class MadLibs implements OnInit {
     ngOnInit() {
         this.resultsSub = this.textRecognitionService.getResultsUpdateListener()
             .subscribe((result) => {
+                console.log(result);
                 this.output = result;
             });
     };

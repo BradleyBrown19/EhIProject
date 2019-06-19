@@ -20,6 +20,8 @@ export class TextRecognitionService {
         headers.set('Content-Type', 'application/json; charset=utf-8');
         let finalString: string = "";
 
+        console.log(text);
+
         while (true) {
 
             if (text.indexOf('*') < 0) {
@@ -48,6 +50,7 @@ export class TextRecognitionService {
             });
 
             let finalStringPart = await promise;
+            console.log(finalStringPart);
             finalString += finalStringPart;
         }
 
