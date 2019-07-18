@@ -24,14 +24,18 @@ import { AttractivenessRating } from './image-recognition/attractiveness/attract
 import { DogBreeds } from './image-recognition/dog-breeds/dog-breeds.component';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
 import { DrawingScreen } from './pictionarAI/drawing-screen/drawing-screen.component';
+import { PictionarAIIntro } from './pictionarAI/intro/pictionarAI-intro.component';
 
 import { AdsenseModule } from 'ng2-adsense';
 
 import { NgxSmartModalModule, NgxSmartModalService } from 'ngx-smart-modal';
 import { EndPictionaraiModal } from './pictionarAI/game-over-modal/modal.component';
 import { RPSGame } from './rock-paper-scissors/game/rps-game.components';
-import { MadLibs } from './mad-libs/mad-libs.component';
+import { MadLibs } from './mad-libs/game/mad-libs.component';
+
 import { RPSPreview } from './rock-paper-scissors/preview/rps-preview.component'
+import { MadLibsIntro } from './mad-libs/intro/mad-libs-intro.component';
+import { Animation } from './image-recognition/animation/animation.component';
 
 
 @NgModule({
@@ -44,10 +48,13 @@ import { RPSPreview } from './rock-paper-scissors/preview/rps-preview.component'
     DogBreeds,
     HomeScreenComponent,
     DrawingScreen,
+    PictionarAIIntro,
     EndPictionaraiModal,
     MadLibs,
+    MadLibsIntro,
     RPSPreview,
-    RPSGame
+    RPSGame,
+    Animation,
   ],
   imports: [
     BrowserModule,

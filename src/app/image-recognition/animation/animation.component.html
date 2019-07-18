@@ -1,0 +1,37 @@
+<h1>Animate me!</h1>
+<nb-card id="buttons">
+    <nb-card-body>
+        <p>Upload an image below to have it classified!</p>
+        <form [formGroup]="form" (submit)="analyzeImage()">
+                <div>
+                    <button (click)="filePicker.click()" mat-stroke-button color="primary" type="button">Pick Image</button>
+                    <input type="file" #filePicker (change)="onImagePicked($event)">
+                </div>
+                <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview && form.get('image').valid">
+                        <img [src]="imagePreview" [alt]="form.value.title">
+                </div>
+                <button mat-raised-button color="accent" type="submit">Analyze!</button>
+            </form>
+    </nb-card-body>
+</nb-card>
+<nb-card id="results" *ngIf="!isImageLoading">
+    <div>
+            <img [src]="imageToShow" id="resultImage"
+            alt="Result Image"
+            *ngIf="!isImageFailed; else noImageFound">
+            <ng-template #noImageFound>
+                    <h1 style="margin: auto;">Error</h1>
+               </ng-template>
+    </div>
+</nb-card>
+<mat-accordion multi="true">
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+           Network Details
+        </mat-expansion-panel-header>
+        <ul>
+            <li>Type: UNET-UNIT (Custom created architecture see: INSERT BLOG POST URL)</li>
+            <li>Time to Train: 40 mins</li>
+        </ul>
+    </mat-expansion-panel>
+</mat-accordion>

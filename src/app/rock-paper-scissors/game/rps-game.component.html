@@ -1,6 +1,7 @@
 <div id="container">
     <h1 id="title">Rock, paper, scissors!</h1>
     <mat-grid-list cols="2" rowHeight="50px">
+        <mat-grid-tile colspan=2><button mat-raised-button (click)=startGame()>Start Game</button></mat-grid-tile>
         <mat-grid-tile><h2>Wins: {{playerWins}}</h2></mat-grid-tile>
         <mat-grid-tile><h2>Wins: {{computerWins}}</h2></mat-grid-tile>
         <mat-grid-tile rowspan="10">

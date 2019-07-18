@@ -17,7 +17,7 @@ export class RPSGame implements AfterViewInit, OnInit {
     indexMove: any;
     rpsURL: string = "http://127.0.0.1:5000/predict-rock";
     prediction: string;
-    winner: string = "Make a fist to start the game!"
+    winner: string = "Press start button to play!"
     subscription: Subscription;
     rockPercentage: any;
     playerWins: any = 0;
@@ -34,7 +34,6 @@ export class RPSGame implements AfterViewInit, OnInit {
     constructor (public ngxSmartModalService: NgxSmartModalService, private http: HttpClient, private router: Router) {}
 
     public ngOnInit() {
-        this.startChecking();
     }
 
     public ngAfterViewInit() {
@@ -46,11 +45,7 @@ export class RPSGame implements AfterViewInit, OnInit {
         }
     }
 
-    startChecking() {
-        const source = interval(1000);
-        this.subscription = source.subscribe(val => this.checkForRock());
-    }
-
+    /*
     async checkForRock() {
         var context = this.canvas.nativeElement.getContext("2d").drawImage(this.video.nativeElement, 0, 0, 640, 480);
 
@@ -79,6 +74,7 @@ export class RPSGame implements AfterViewInit, OnInit {
             }
         }); 
     }
+    */
 
     public startGame() {
         this.winner = "Starting game..."
@@ -184,12 +180,11 @@ export class RPSGame implements AfterViewInit, OnInit {
 
         this.moveName = "";
         this.prediction = "";
-        this.winner = "Ready for a game";
+        this.winner = "Press start button to play!";
         this.computerMove = '../../assets/images/rps/thumbs-up.png';
         this.video.nativeElement.play();
         document.getElementById('video').style.border = "2px solid black";
         document.getElementById('move-background').style.border = "2px solid black";
-        this.startChecking();
 
     }
 
