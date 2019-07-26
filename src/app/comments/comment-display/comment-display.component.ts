@@ -17,12 +17,25 @@ export class CommentDisplayComponent implements OnInit, OnDestroy {
    totalComments = 10;
    commentsPerPage = 3;
    currentPage = 1;
+   topic: String = 'all';
    pageSizeOptions = [1, 2, 5, 10];
 
     constructor(public commentsService: CommentService) {}
 
+    topics = [
+        {value: 'all', viewValue: 'All'},
+        {value: 'suggestions', viewValue: 'Suggestions'},
+        {value: 'feedback', viewValue: 'Feedback'},
+        {value: 'general', viewValue: 'General'},
+      ];
+
+    changeTopic(value) {
+        this.topic = value;
+        this.commentsService.getComments(this.commentsPerPage, this.currentPage, this.topic);
+    }
+
     ngOnInit() {
-        this.commentsService.getComments(this.commentsPerPage, this.currentPage);
+        this.commentsService.getComments(this.commentsPerPage, this.currentPage, this.topic);
         this.commentsSub = this.commentsService.getCommentsUpdateListener()
             .subscribe((commentData: {comments: Comment[], commCount: number}) => {
                 this.comments = commentData.comments;
@@ -36,14 +49,14 @@ export class CommentDisplayComponent implements OnInit, OnDestroy {
 
     onDelete(commentId: string) {
         this.commentsService.deletePost(commentId).subscribe(() => {
-            this.commentsService.getComments(this.commentsPerPage, this.currentPage);
+            this.commentsService.getComments(this.commentsPerPage, this.currentPage, this.topic);
         });
     }
 
     onChangedPage(pageData: PageEvent) {
         this.currentPage = pageData.pageIndex + 1;
         this.commentsPerPage = pageData.pageSize;
-        this.commentsService.getComments(this.commentsPerPage, this.currentPage);
+        this.commentsService.getComments(this.commentsPerPage, this.currentPage, this.topic);
     }
 
 }

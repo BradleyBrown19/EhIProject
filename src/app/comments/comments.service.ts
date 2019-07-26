@@ -12,8 +12,9 @@ export class CommentService {
 
     constructor (private http: HttpClient, private router: Router) {}
 
-    getComments(commentsPerPage: number, currentPage: number) {
-        const queryParams = `?pageSize=${commentsPerPage}&page=${currentPage}`;
+    getComments(commentsPerPage: number, currentPage: number, topic: String) {
+        console.log(topic)
+        const queryParams = `?topic=${topic}&pageSize=${commentsPerPage}&page=${currentPage}`;
         this.http.get<{message: string, comments: Comment[], maxPosts: number}>(
             'http://localhost:3000/api/comments' + queryParams)
             .subscribe((commentData) => {
@@ -31,8 +32,8 @@ export class CommentService {
         return this.commentsUpdated.asObservable();
     }
 
-    addComment(title: string, content: string) {
-        const comment: Comment = {title: title, content: content, _id: null};
+    addComment(title: string, content: string, topic: string) {
+        const comment: Comment = {title: title, content: content, topic: topic, _id: null};
 
         this.http.post<{message: string, commentId: string}>('http://localhost:3000/api/comments', comment)
             .subscribe((commentData) => {
@@ -40,8 +41,8 @@ export class CommentService {
             });
     }
 
-    updateComment(id: string, title: string, content: string) {
-        const comment: Comment = {_id: id, title: title, content: content};
+    updateComment(id: string, title: string, content: string, topic: string) {
+        const comment: Comment = {_id: id, title: title, content: content, topic: topic};
         this.http.put("http://localhost:3000/api/comments/" + id, comment) 
             .subscribe((response) => {
                 this.router.navigate(["/comments"]);

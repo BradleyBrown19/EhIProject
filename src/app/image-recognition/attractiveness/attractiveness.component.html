@@ -1,7 +1,7 @@
-<h1>Attactiveness Score</h1>
+<h1>Painting Similarity</h1>
 <nb-card>
     <nb-card-body>
-        <p>Upload a picture of a face to have it rated!</p>
+        <p>Upload a painting and see which artist it looks like it belong to!</p>
         <form [formGroup]="form" (submit)="analyzeImage()">
                 <div>
                     <button (click)="filePicker.click()" mat-stroke-button color="primary" type="button">Pick Image</button>
@@ -16,10 +16,7 @@
 </nb-card>
 <nb-card id="results">
     <div *ngIf="predictionLabel != undefined">
-        <h2>Rating: {{predictionLabel}}</h2>
-        <div *ngIf="predictionLabel <= 3">
-            <h2>(Remember, it's only 50% accurate)</h2>
-        </div>
+        <h2>Result: </h2>
      </div>
 </nb-card>
 <mat-accordion multi="true">
@@ -33,7 +30,7 @@
         <mat-expansion-panel-header>
            Classes
         </mat-expansion-panel-header>
-        Rating on a scale of 1-5
+        
 
 
     </mat-expansion-panel>
@@ -44,8 +41,9 @@
         </mat-expansion-panel-header>
         <ul>
             <li>Type: Convolutional</li>
-            <li>Time to Train: 5 mins</li>
-            <li>Number of Classes: 5</li>
+            <li>Time to Train: 1.5 hours</li>
+            <li>Number of Classes: 50</li>
+            <li>Made on: Tensorflow</li>
         </ul>
     </mat-expansion-panel>
 </mat-accordion>

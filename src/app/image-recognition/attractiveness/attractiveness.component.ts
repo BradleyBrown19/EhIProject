@@ -18,7 +18,7 @@ export class AttractivenessRating implements OnInit {
     prediction: {'label': string, 'confidence': Number};
     predictionLabel: string;
     predictionConfidence: Number;
-    imageRecognitionURL: string = "http://127.0.0.1:5000/predict-attract";
+    imageRecognitionURL: string = "http://127.0.0.1:5000/predict-painter";
     private resultsSub: Subscription;
 
     constructor (private http: HttpClient, private router: Router, public imageRecognitionService: ImageRecognitionService) {}

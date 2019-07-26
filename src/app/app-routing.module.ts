@@ -18,6 +18,7 @@ import { Animation } from './image-recognition/animation/animation.component';
 const routes: Routes = [
     { path: '', component: HomeScreenComponent},
     { path: 'comment', component: CommentCreateComponent},
+    { path: 'comment-display', component: CommentDisplayComponent},
     { path: 'edit-comment/:commentId', component: CommentCreateComponent},
     { path: 'attractiveness', component: AttractivenessRating },
     { path: 'dog-breeds', component: DogBreeds },

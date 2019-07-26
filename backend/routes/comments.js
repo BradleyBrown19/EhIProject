@@ -5,7 +5,8 @@ const router = express.Router();
 router.post("", (req, res, next) => {
     const comment = new Comment({
         title: req.body.title,
-        content: req.body.content
+        content: req.body.content,
+        topic: req.body.topic
     });
 
     comment.save().then(result => {
@@ -28,7 +29,8 @@ router.put("/:id", (req, res, next) =>  {
     const comment = new Comment({
         _id: req.body._id,
         title: req.body.title,
-        content: req.body.content
+        content: req.body.content,
+        topic: req.body.topic,
     });
     Comment.updateOne({_id: req.params.id}, comment).then(result => {
         console.log(result);
@@ -39,6 +41,7 @@ router.put("/:id", (req, res, next) =>  {
 router.get("", (req, res, next) => {
     const pageSize = +req.query.pageSize;
     const currentPage = +req.query.page;
+    const topic = req.query.topic
     const commentQuery = Comment.find();
     let fetchedPosts;
 
@@ -46,6 +49,10 @@ router.get("", (req, res, next) => {
         commentQuery
             .skip(pageSize * (currentPage - 1))
             .limit(pageSize);
+    }
+
+    if (topic != 'all') {
+        commentQuery.where('topic').equals(topic)
     }
 
     commentQuery.then(documents => {

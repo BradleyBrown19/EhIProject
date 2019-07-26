@@ -14,8 +14,19 @@ export class CommentCreateComponent implements OnInit {
     private mode = 'create';
     private commentId: string;
     comment: Comment;
+    topic: String;
 
     constructor(public commentsService: CommentService, public route: ActivatedRoute, private router: Router) {}
+
+    topics = [
+        {value: 'suggestions', viewValue: 'Suggestions'},
+        {value: 'feedback', viewValue: 'Feedback'},
+        {value: 'general', viewValue: 'General'},
+      ];
+
+    changeTopic(value) {
+        this.topic = value
+    }
 
     ngOnInit() {
         this.route.paramMap.subscribe((paramMap: ParamMap) => {
@@ -36,9 +47,9 @@ export class CommentCreateComponent implements OnInit {
         }
 
         if (this.mode === 'create') {
-            this.commentsService.addComment(form.value.title, form.value.content);
+            this.commentsService.addComment(form.value.title, form.value.content, form.value.topic);
         } else {
-            this.commentsService.updateComment(this.commentId, form.value.title, form.value.content);
+            this.commentsService.updateComment(this.commentId, form.value.title, form.value.content, form.value.topic);
             this.router.navigateByUrl('/comment');
         }
 

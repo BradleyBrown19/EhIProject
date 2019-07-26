@@ -6,3 +6,12 @@ mat-card {
 text-area, mat-form-field {
     width: 100%
 }
+
+#thread {
+    width: 20%;
+}
+
+#title {
+    width: 20%;
+    margin: auto;
+}
