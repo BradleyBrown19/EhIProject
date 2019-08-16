@@ -5,18 +5,17 @@ import { Router } from '@angular/router';
 @Component({
     selector: 'home-screen',
     templateUrl: './home-screen.component.html',
-    styleUrls: ['./home-screen.component.css']
+    styleUrls: ['./home-screen.component.scss']
 })
 export class HomeScreenComponent {
-    weeklyfeature: String = 'Dog Image Classifier'
-    weeklyImage: String = '../../assets/images/dog.png'
-    routerLink: String = 'dog-breeds'
-    games: any[] = ['/dog-breeds', '/fruit-types']
+    weeklyfeature: String = 'PictionarAI'
+    weeklyImage: String = '../../assets/images/paint2.png'
+    routerLink: String = 'pictionarAI-intro'
+    games: any[] = ["/madlibs-intro", "/painter-intro", "/rps-preview", "/pictionarAI-intro"]
 
     constructor (private http: HttpClient, private router: Router) {}
 
     randomGame() {
-        console.log('called');
         let randomIndex = Math.floor(Math.random() * this.games.length);
         this.router.navigate([this.games[randomIndex]]);
     }

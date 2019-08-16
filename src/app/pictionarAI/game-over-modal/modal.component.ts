@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'end-game-modal',
   templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.css']
+  styleUrls: ['./modal.component.scss']
 })
 export class EndPictionaraiModal implements OnInit {
     ready: boolean = false;

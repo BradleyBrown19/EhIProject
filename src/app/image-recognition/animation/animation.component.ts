@@ -6,11 +6,14 @@ import { Router } from '@angular/router';
 import { ImageRecognitionService } from '../image-recognition.service';
 import { elementStart } from '@angular/core/src/render3';
 import { Subscription } from 'rxjs';
+import { environment } from 'src/environments/environment';
+
+const pythonApi = environment.pythonUrl;
 
 @Component({
     selector: 'animation',
     templateUrl: './animation.component.html',
-    styleUrls: ['./animation.component.css']
+    styleUrls: ['./animation.component.scss']
 })
 export class Animation implements OnInit {
     form: FormGroup;
@@ -18,7 +21,7 @@ export class Animation implements OnInit {
     prediction: {'label': string, 'confidence': Number};
     predictionLabel: string;
     predictionConfidence: Number;
-    imageRecognitionURL: string = "http://127.0.0.1:5000/predict-animation";
+    imageRecognitionURL: string = pythonApi + "/predict-animation";
     private resultsSub: Subscription;
     resultsPic: any;
     imageToShow: any;

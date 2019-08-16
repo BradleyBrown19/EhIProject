@@ -3,6 +3,9 @@ import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+
+const pythonApi = environment.pythonUrl;
 
 @Injectable({providedIn: 'root'})
 export class ImageRecognitionService {
@@ -23,6 +26,7 @@ export class ImageRecognitionService {
     }
 
     analyzeImage(image: any, url: string) {
+        console.log(url);
         this.http.post<{'success': any, 'predictions': {'label': string, 'confidence': Number}}>(url, image)
         .subscribe(result => {
             this.prediction = result.predictions;

@@ -1,17 +1,19 @@
 <h1>PictionarAI</h1>
 <nb-card>
-<nb-card-header>
-    <h2>Trying to draw: {{currentPic}}</h2>
-    <h3>Time Left: {{time}}</h3>
-</nb-card-header>
 <div id="container-canvas">
-<canvas #canvas id="canvas"></canvas>
+    <mat-grid-list cols="2" rowheight="600px">
+        <mat-grid-tile [colspan]="1"><canvas #canvas id="canvas"></canvas></mat-grid-tile>
+        <mat-grid-tile>
+            <h2>Trying to draw: {{currentPic}}<br>
+            Time Left: {{time}}<br> <br>
+            Computer's Guess: {{prediction.label}}</h2>
+        </mat-grid-tile>
+    </mat-grid-list>
 </div>
 <nb-card-footer>
-    <h2 *ngIf="prediction != undefined">Computer's Guess: {{prediction.label}}</h2>
+        <button mat-raised-button type="submit" (click)="resetCanvas()">Reset Canvas</button>
 </nb-card-footer>
 </nb-card>
 <div>
-<button mat-raised-button type="submit" (click)="resetCanvas()">Reset Canvas</button>
 <end-game-modal></end-game-modal>
 </div>

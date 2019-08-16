@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
+
+const pythonApi = environment.pythonUrl;
 
 @Injectable({providedIn: 'root'})
 export class TextRecognitionService {
@@ -25,7 +28,7 @@ export class TextRecognitionService {
         while (true) {
 
             if (text.indexOf('*') < 0) {
-                finalString += text;
+                finalString += text.substr(1, finalString.length);
                 break;
             }
 

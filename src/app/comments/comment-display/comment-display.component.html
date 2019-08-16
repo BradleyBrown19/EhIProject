@@ -1,25 +1,30 @@
-<h3>Thread</h3>
-<mat-form-field id="thread">
-        <mat-select required placeholder="Thread" name="topic" [(ngModel)]="topic" (selectionChange)="changeTopic($event.value)" required>
-            <mat-option *ngFor="let topic of topics" [value]="topic.value">
-                {{topic.viewValue}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
-<mat-accordion multi="true" *ngIf="comments.length > 0">
-    <div *ngFor="let comment of comments">
-        <mat-expansion-panel>
-            <mat-expansion-panel-header>
-                {{comment.title}} 
-            </mat-expansion-panel-header>
-            <p> {{comment.content}} </p>
-
-            <mat-action-row>
-                <button mat-button color="primary" [routerLink]="['/edit-comment', comment._id]">Edit</button>
-                <button mat-button color="warn" (click)="onDelete(comment._id)">Delete</button>
-            </mat-action-row>
-        </mat-expansion-panel>
-    </div>
-</mat-accordion>
-<p class="info-text mat-body-1" *ngIf="comments.length == 0">No posts to show!</p>
-<mat-paginator [length]="totalComments" [pageSize]="commentsPerPage" [pageSizeOptions]="pageSizeOptions" (page)="onChangedPage($event)"></mat-paginator>
+<nb-layout>
+    <nb-layout-column>
+            <h3>Thread</h3>
+            <mat-form-field id="thread">
+                    <mat-select required placeholder="Thread" name="topic" [(ngModel)]="topic" (selectionChange)="changeTopic($event.value)" required>
+                        <mat-option *ngFor="let topic of topics" [value]="topic.value">
+                            {{topic.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            <mat-accordion multi="true" *ngIf="comments.length > 0">
+                <div *ngFor="let comment of comments">
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            {{comment.title}} 
+                        </mat-expansion-panel-header>
+                        <p> {{comment.content}} </p>
+            
+                        <mat-action-row>
+                            <button mat-button color="primary" [routerLink]="['/edit-comment', comment._id]">Edit</button>
+                            <button mat-button color="warn" (click)="onDelete(comment._id)">Delete</button>
+                        </mat-action-row>
+                    </mat-expansion-panel>
+                </div>
+            </mat-accordion>
+            <p class="info-text mat-body-1" *ngIf="comments.length == 0">No posts to show!</p>
+            <mat-paginator [length]="totalComments" [pageSize]="commentsPerPage" [pageSizeOptions]="pageSizeOptions" (page)="onChangedPage($event)"></mat-paginator>
+            
+    </nb-layout-column>
+</nb-layout>

@@ -1,0 +1,86 @@
+@import "../../variables.scss";
+
+nb-card {
+    background-color: $main-color;
+    opacity: 50%;
+    margin: auto;
+    margin-top: 1rem;
+    width: 90%;
+    color: $accent-secondary;
+}
+
+button {
+    background-color: $main-color;
+    border: 0px
+}
+
+nb-card-header {
+    border-bottom: $accent-color solid 3px
+}
+
+h2 {
+    margin: auto;
+    color: white;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+img {
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.carousel-item {
+    margin: 1rem;
+    height: 200px;
+    width: 300px;
+    color:white;
+}
+
+nb-layout-footer {
+    background-color: gray;
+}
+
+drag-scroll {
+    text-align: center;
+}
+
+#random-game {
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    height: 200px;
+    width: 200px;
+    font-size: 1.5em;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    margin: none;
+    padding: none;
+}
+
+#random-game {
+    background-color: $accent-color;
+}
+
+nb-card-header {
+    color: white;
+}
+
+i {
+    margin: auto;
+    width: 50%;
+    color: $accent-secondary;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 7em;
+}
+
+#featureButton {
+    background-color: $accent-color
+}

@@ -2,22 +2,23 @@
         <nb-layout-column>
         <nb-card>
             <h1>PictionarAI</h1>
-            <i class="fas fa-paint-brush"></i>
+            <mat-grid-list cols="5" rowHeight="450px">
+                <mat-grid-tile [colspan]="2" id="instructions">
+                        <ul>
+                            <h2>Instructions</h2>
+                                <li>When you click 'Try it out!' on this page it will take you to another page with a canvas</li>
+                                <li>At the top of the screen there will be something that you have to draw one the canvas</li>
+                                <li>The AI will constantly make guesses on what you are drawing that will appear below the canvas</li>
+                                <li>You have 20 seconds from when you get to the page to get the AI to predict what you are drawing!</li>
+                        </ul>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="3">
+                    <i id="icon" class="fas fa-paint-brush"></i>
+                </mat-grid-tile>
+            </mat-grid-list>
             <button mat-raised-button routerLink="/drawing-canvas">Try it out!</button>
         </nb-card>
         <mat-accordion multi="true">
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                    Instructions
-                </mat-expansion-panel-header>
-                <ul>
-                    <li>When you click 'Try it out!' on this page it will take you to another page with a canvas</li>
-                    <li>At the top of the screen there will be something that you have to draw one the canvas</li>
-                    <li>The AI will constantly make guesses on what you are drawing that will appear below the canvas</li>
-                    <li>You have 20 seconds from when you get to the page to get the AI to predict what you are drawing!</li>
-                </ul>
-            
-            </mat-expansion-panel>
             <mat-expansion-panel>
                     <mat-expansion-panel-header>
                         Neural net details
@@ -28,6 +29,13 @@
                             <li>Time to Train: 1 hr</li>
                             <li>Number of Classes: 340</li>
                     </ul>
+                
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        Source
+                    </mat-expansion-panel-header>
+                    <a href="https://github.com/googlecreativelab/quickdraw-dataset">Google QuickDraw</a>
                 
             </mat-expansion-panel>
         </mat-accordion>

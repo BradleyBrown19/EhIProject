@@ -7,18 +7,21 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { NgxSmartModalService } from 'ngx-smart-modal';
 var dataURLtoBlob = require('blueimp-canvas-to-blob');
+import { environment } from 'src/environments/environment';
+
+const pythonApi = environment.pythonUrl;
 
 
 @Component({
     selector: 'drawing-screen',
     templateUrl: './drawing-screen.component.html',
-    styleUrls: ['./drawing-screen.component.css']
+    styleUrls: ['./drawing-screen.component.scss']
 })
 export class DrawingScreen implements AfterViewInit, OnInit {
     @ViewChild('canvas') public canvas: ElementRef;
     drawingArray: Array<[number, number]> = [];
     points: ISimplifyArrayPoint[] = [];
-    imageRecognitionURL: string = "http://127.0.0.1:5000/predict-draw";
+    imageRecognitionURL: string = pythonApi + "/predict-draw";
     file: File;
     prediction: {'label': string, 'confidence': Number};
     subscription: Subscription;

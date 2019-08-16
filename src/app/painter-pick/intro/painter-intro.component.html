@@ -1,0 +1,42 @@
+<nb-layout>
+        <nb-layout-column>
+        <nb-card>
+            <h1>Painter Picker</h1>
+            <i class="fas fa-paint-brush"></i>
+            <button mat-raised-button routerLink="/painter-drawing-canvas">Try it out!</button>
+        </nb-card>
+        <mat-accordion multi="true">
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    Instructions
+                </mat-expansion-panel-header>
+                <ul>
+                    <li>When you click 'Try it out!' on this page it will take you to another page with a canvas</li>
+                    <li>There will be a canvas for you to create your masterpiece</li>
+                    <li>The AI will constantly make guesses on what artist your painting looks like, this will appear below the canvas!</li>
+                    <li>Try to paint like the suggested painter on the right!</li>
+                </ul>
+            
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        Neural net details
+                    </mat-expansion-panel-header>
+                    <ul>
+                            <li>Accuracy: 92%</li>
+                            <li>Type: Convolutional/Fully Connected</li>
+                            <li>Time to Train: 5 mins</li>
+                            <li>Number of Classes: 50</li>
+                    </ul>
+                
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        Source
+                    </mat-expansion-panel-header>
+                    <a href="https://www.kaggle.com/ikarus777/best-artworks-of-all-time">Best Artworks of All Time</a>
+                
+            </mat-expansion-panel>
+        </mat-accordion>
+        </nb-layout-column>
+    </nb-layout>

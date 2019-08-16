@@ -1,0 +1,29 @@
+@import "../../variables.scss";
+
+nb-card {
+    background-color: $main-color;
+    opacity: 50%;
+    margin: auto;
+    margin-top: 1rem;
+    width: 90%;
+    color: white;
+    padding: 1em;
+}
+
+nb-card-header {
+    border-bottom: $accent-color solid 3px
+}
+
+h2 {
+    color: white;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+img {
+    width: 400px
+}
+
+h1 {
+    margin-left: 28%;
+}

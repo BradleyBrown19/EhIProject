@@ -1,0 +1,29 @@
+<ngx-smart-modal #myModal [closable]="false" [dismissable]="false" [escapable]="false" [backdrop]="true" identifier="myModal">
+<div *ngIf="myModal.hasData()">
+    <nb-card>
+        <nb-card-header>
+            <div *ngIf="myModal.getData().win == true">
+                WINNER!!
+            </div>
+            <div *ngIf="myModal.getData().win == false">
+                Loser.
+            </div>
+
+        </nb-card-header>
+
+        <nb-card-body>
+            <div *ngIf="myModal.getData().win == false">
+            <h2>Final Guess: {{ myModal.getData().guess }}</h2>
+            </div>
+            <div *ngIf="myModal.getData().win == true">
+                <h2>Your painter looked like {{ myModal.getData().guess }}!</h2>
+            </div>
+        </nb-card-body>
+
+        <nb-card-footer>
+            <button mat-raised-button color="accent" (click)="myModal.close(); playAgain()">Play Again!</button>
+            <button mat-raised-button color="accent" (click)="myModal.close(); returnToMenu()">Return to menu</button>
+        </nb-card-footer>
+    </nb-card>
+</div>
+</ngx-smart-modal>

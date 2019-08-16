@@ -4,11 +4,14 @@ import { Router } from '@angular/router';
 import { TextRecognitionService } from './mad-libs-service.component'
 import { Subscription } from 'rxjs';
 import { NgForm, FormGroup, Validators } from '@angular/forms';
+import { environment } from 'src/environments/environment';
+
+const pythonApi = environment.pythonUrl;
 
 @Component({
     selector: 'madlibs',
     templateUrl: './mad-libs.component.html',
-    styleUrls: ['./mad-libs.component.css']
+    styleUrls: ['./mad-libs.component.scss']
 })
 export class MadLibs implements OnInit {
     storyModesRequired: any;
@@ -21,21 +24,18 @@ export class MadLibs implements OnInit {
     storyModes = [
         {value: 0, viewValue: 'Science Fiction'},
         {value: 1, viewValue: 'Religious Texts'},
-        {value: 2, viewValue: 'Political Statements'},
-        {value: 3, viewValue: 'Evening News'}
+        {value: 2, viewValue: 'Evening News'}
       ];
 
     storyModeURLs = [
-        'http://127.0.0.1:5000/madlibs-scifi',
-        'http://127.0.0.1:5000/madlibs-religious',
-        'http://127.0.0.1:5000/madlibs-politics',
-        'http://127.0.0.1:5000/madlibs-news'
+        pythonApi + '/madlibs-scifi',
+        pythonApi + '/madlibs-religious',
+        pythonApi + '/madlibs-news'
     ]
 
     backgroundImageURLs = [
         "url('../../../assets/backgrounds/scifi-background.jpg')",
         "url('../../../assets/backgrounds/religious-background.jpg')",
-        "url('../../../assets/backgrounds/politics-background.jpg')",
         "url('../../../assets/backgrounds/madlibs-news.png')"
     ]
     imageBackgroundURL: string = "url('../../../assets/backgrounds/scifi-background.jpg')";
@@ -48,13 +48,19 @@ export class MadLibs implements OnInit {
                 console.log(result);
                 this.output = result;
             });
+
+            let storyModes = [
+                {value: 0, viewValue: 'Science Fiction'},
+                {value: 1, viewValue: 'Religious Texts'},
+                {value: 2, viewValue: 'Evening News'}
+              ];
     };
 
     changeStoryMode(value) {
         this.textRecognitionURL = this.storyModeURLs[value];
         this.imageBackgroundURL = this.backgroundImageURLs[value];
 
-        if (value == 1 || value == 2) {
+        if (value == 1) {
             document.getElementById('story-writing').style.color = 'black';
             document.getElementById('story-title').style.color = 'black';
         } else {

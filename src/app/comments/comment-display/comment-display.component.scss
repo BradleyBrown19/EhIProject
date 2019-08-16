@@ -1,0 +1,14 @@
+@import "../../../variables.scss";
+
+:host {
+    display: block;
+    margin-top: 1rem;
+}
+
+mat-paginator {
+    margin-top: 1rem;
+}
+
+p {
+    text-align: center;
+}

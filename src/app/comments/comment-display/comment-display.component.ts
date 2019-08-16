@@ -9,7 +9,7 @@ import { PageEvent } from '@angular/material';
 @Component({
     selector: 'app-comment-display',
     templateUrl: './comment-display.component.html',
-    styleUrls: ['./comment-display.component.css']
+    styleUrls: ['./comment-display.component.scss']
 })
 export class CommentDisplayComponent implements OnInit, OnDestroy {
    comments: Comment[] = [];

@@ -6,11 +6,14 @@ import { Router } from '@angular/router';
 import { ImageRecognitionService } from '../image-recognition.service';
 import { elementStart } from '@angular/core/src/render3';
 import { Subscription } from 'rxjs';
+import { environment } from 'src/environments/environment';
+
+const pythonApi = environment.pythonUrl;
 
 @Component({
     selector: 'attractiveness',
     templateUrl: './attractiveness.component.html',
-    styleUrls: ['./attractiveness.component.css']
+    styleUrls: ['./attractiveness.component.scss']
 })
 export class AttractivenessRating implements OnInit {
     form: FormGroup;
@@ -18,7 +21,7 @@ export class AttractivenessRating implements OnInit {
     prediction: {'label': string, 'confidence': Number};
     predictionLabel: string;
     predictionConfidence: Number;
-    imageRecognitionURL: string = "http://127.0.0.1:5000/predict-painter";
+    imageRecognitionURL: string = pythonApi + "/predict-age";
     private resultsSub: Subscription;
 
     constructor (private http: HttpClient, private router: Router, public imageRecognitionService: ImageRecognitionService) {}
@@ -33,7 +36,7 @@ export class AttractivenessRating implements OnInit {
 
         this.resultsSub = this.imageRecognitionService.getResultsUpdateListener()
             .subscribe((predictions: {label: string, confidence: Number}) => {
-                this.predictionLabel = predictions.label;
+                this.predictionLabel = predictions.label.substr(1);
                 this.predictionConfidence = predictions.confidence;
                 /*
                 if (predictions.confidence > 0.96) {

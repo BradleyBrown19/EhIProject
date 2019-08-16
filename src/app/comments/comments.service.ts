@@ -4,6 +4,9 @@ import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { stringify } from '@angular/compiler/src/util';
 import { Router } from '@angular/router'
+import { environment } from 'src/environments/environment';
+
+const apiUrl = environment.apiUrl;
 
 @Injectable({providedIn: 'root'})
 export class CommentService {
@@ -16,9 +19,10 @@ export class CommentService {
         console.log(topic)
         const queryParams = `?topic=${topic}&pageSize=${commentsPerPage}&page=${currentPage}`;
         this.http.get<{message: string, comments: Comment[], maxPosts: number}>(
-            'http://localhost:3000/api/comments' + queryParams)
+            apiUrl+'/api/comments' + queryParams)
             .subscribe((commentData) => {
                 this.comments = commentData.comments;
+                console.log(commentData);
                 this.commentsUpdated.next({comments: [...this.comments], commCount: commentData.maxPosts});
                 this.router.navigate
             });
@@ -35,7 +39,7 @@ export class CommentService {
     addComment(title: string, content: string, topic: string) {
         const comment: Comment = {title: title, content: content, topic: topic, _id: null};
 
-        this.http.post<{message: string, commentId: string}>('http://localhost:3000/api/comments', comment)
+        this.http.post<{message: string, commentId: string}>(apiUrl+'/api/comments', comment)
             .subscribe((commentData) => {
                 this.router.navigate(["/comments"]);
             });
@@ -43,13 +47,13 @@ export class CommentService {
 
     updateComment(id: string, title: string, content: string, topic: string) {
         const comment: Comment = {_id: id, title: title, content: content, topic: topic};
-        this.http.put("http://localhost:3000/api/comments/" + id, comment) 
+        this.http.put(apiUrl+'/api/comments/' + id, comment) 
             .subscribe((response) => {
                 this.router.navigate(["/comments"]);
             });
         }
 
     deletePost(commentId: string) {
-        return this.http.delete("http://localhost:3000/api/comments/"+ commentId);
+        return this.http.delete(apiUrl+'/api/comments/'+ commentId)
     }
 }

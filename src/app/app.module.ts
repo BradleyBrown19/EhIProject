@@ -36,6 +36,12 @@ import { MadLibs } from './mad-libs/game/mad-libs.component';
 import { RPSPreview } from './rock-paper-scissors/preview/rps-preview.component'
 import { MadLibsIntro } from './mad-libs/intro/mad-libs-intro.component';
 import { Animation } from './image-recognition/animation/animation.component';
+import { AboutComponent } from './about/about.component';
+import { Summer } from './image-recognition/summer/summer.component';
+import { ArticlesComponent } from './articles/articles.component';
+import { PainterDrawingScreen } from './painter-pick/drawing-screen/painter-drawing-screen.component';
+import { PainterIntro } from './painter-pick/intro/painter-intro.component';
+import { EndPainterModal } from './painter-pick/game-over-modal/painter-modal.component';
 
 
 @NgModule({
@@ -55,6 +61,12 @@ import { Animation } from './image-recognition/animation/animation.component';
     RPSPreview,
     RPSGame,
     Animation,
+    AboutComponent,
+    Summer,
+    ArticlesComponent,
+    PainterDrawingScreen,
+    PainterIntro,
+    EndPainterModal
   ],
   imports: [
     BrowserModule,

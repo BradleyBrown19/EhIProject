@@ -3,11 +3,14 @@ import { NgxSmartModalService } from 'ngx-smart-modal';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { fromEvent, interval, Subscription } from 'rxjs';
+import { environment } from 'src/environments/environment';
+
+const pythonApi = environment.pythonUrl;
 
 @Component({
     selector: 'rps-game',
     templateUrl: './rps-game.component.html',
-    styleUrls: ['./rps-game.component.css']
+    styleUrls: ['./rps-game.component.scss']
 })
 export class RPSGame implements AfterViewInit, OnInit {
     computerMove: String ='../../assets/images/rps/thumbs-up.png'
@@ -15,7 +18,7 @@ export class RPSGame implements AfterViewInit, OnInit {
     moveNames: String[] = ['rock', 'paper', 'scissor'];
     moveName: String;
     indexMove: any;
-    rpsURL: string = "http://127.0.0.1:5000/predict-rock";
+    rpsURL: string = pythonApi + '/predict-rock';
     prediction: string;
     winner: string = "Press start button to play!"
     subscription: Subscription;

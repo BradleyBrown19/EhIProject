@@ -1,7 +1,7 @@
-<h1>Painting Similarity</h1>
+<h1>Age Guesser</h1>
 <nb-card>
     <nb-card-body>
-        <p>Upload a painting and see which artist it looks like it belong to!</p>
+        <p>Upload a picture to have the age guessed!!</p>
         <form [formGroup]="form" (submit)="analyzeImage()">
                 <div>
                     <button (click)="filePicker.click()" mat-stroke-button color="primary" type="button">Pick Image</button>
@@ -16,7 +16,7 @@
 </nb-card>
 <nb-card id="results">
     <div *ngIf="predictionLabel != undefined">
-        <h2>Result: </h2>
+        <h2>Result: {{predictionLabel}} years old</h2>
      </div>
 </nb-card>
 <mat-accordion multi="true">
@@ -24,13 +24,13 @@
         <mat-expansion-panel-header>
            Accuracy
         </mat-expansion-panel-header>
-        <b>51%</b>
+        <b>25%</b>
     </mat-expansion-panel>
     <mat-expansion-panel>
         <mat-expansion-panel-header>
            Classes
         </mat-expansion-panel-header>
-        
+            All the ages between 0 and 99
 
 
     </mat-expansion-panel>
@@ -41,9 +41,15 @@
         </mat-expansion-panel-header>
         <ul>
             <li>Type: Convolutional</li>
-            <li>Time to Train: 1.5 hours</li>
-            <li>Number of Classes: 50</li>
-            <li>Made on: Tensorflow</li>
+            <li>Time to Train: 10 mins</li>
+            <li>Number of Classes: 100</li>
+            <li>Made on: Pytorch</li>
         </ul>
     </mat-expansion-panel>
+    <mat-expansion-panel>
+            <mat-expansion-panel-header>
+               Source
+            </mat-expansion-panel-header>
+            <a href="https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/">IMBD Face Dataset</a>
+        </mat-expansion-panel>
 </mat-accordion>

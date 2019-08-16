@@ -12,6 +12,11 @@ import { RPSPreview } from './rock-paper-scissors/preview/rps-preview.component'
 import { MadLibsIntro } from './mad-libs/intro/mad-libs-intro.component';
 import { PictionarAIIntro } from './pictionarAI/intro/pictionarAI-intro.component';
 import { Animation } from './image-recognition/animation/animation.component';
+import { AboutComponent } from './about/about.component';
+import { Summer } from './image-recognition/summer/summer.component';
+import { ArticlesComponent } from './articles/articles.component';
+import { PainterDrawingScreen } from './painter-pick/drawing-screen/painter-drawing-screen.component';
+import { PainterIntro } from './painter-pick/intro/painter-intro.component';
 
 
 
@@ -20,7 +25,7 @@ const routes: Routes = [
     { path: 'comment', component: CommentCreateComponent},
     { path: 'comment-display', component: CommentDisplayComponent},
     { path: 'edit-comment/:commentId', component: CommentCreateComponent},
-    { path: 'attractiveness', component: AttractivenessRating },
+    { path: 'age', component: AttractivenessRating },
     { path: 'dog-breeds', component: DogBreeds },
     { path: 'drawing-canvas', component: DrawingScreen},
     { path: 'pictionarAI-intro', component: PictionarAIIntro},
@@ -28,7 +33,12 @@ const routes: Routes = [
     { path: 'madlibs', component: MadLibs},
     { path: 'madlibs-intro', component: MadLibsIntro},
     { path: 'rps-preview', component: RPSPreview },
-    { path: 'animation', component: Animation}
+    { path: 'animation', component: Animation},
+    { path: 'about', component: AboutComponent},
+    { path: 'summer', component: Summer},
+    { path: 'articles', component: ArticlesComponent},
+    { path: 'painter-drawing-canvas', component: PainterDrawingScreen},
+    { path: 'painter-intro', component: PainterIntro},
 ]
 
 @NgModule({

@@ -1,35 +1,39 @@
-<h1>MadLibs</h1>
-<nb-card>
-    <nb-card-body>
-        <form (submit)="onSubmit(commentForm)" #commentForm="ngForm">
-            <mat-form-field>
-                <input matInput type="text" placeholder="Title" name="title" [ngModel] #title="ngModel">
-                <mat-error *ngIf="title.invalid">Please enter valid title.</mat-error>
-            </mat-form-field>
-            <mat-form-field>
-                <textarea matInput rows="4" placeholder="Story" name="content" required [ngModel] #content="ngModel"></textarea>
-                <mat-error *ngIf="content.invalid">Please enter some content.</mat-error>
-            </mat-form-field>
-        
-            
-            <input matInput type="text">
-            <mat-form-field id="select">
-                    <mat-label>Story Type</mat-label>
-                    <mat-select required name="storyModesRequired" [(ngModel)]="storyModesRequired" (selectionChange)="changeStoryMode($event.value)" required>
-                      <mat-option *ngFor="let story of storyModes" [value]="story.value">
-                        {{story.viewValue}}
-                      </mat-option>
-                    </mat-select>
-            </mat-form-field>
-            <button mat-raised-button color="accent" type="submit">Create!</button>
-        </form>
-    </nb-card-body>
-    <nb-card-footer id="story-background">
-        <div>
-            <h2 id="story-title">{{titleOfStory}}</h2>
-            <p id='story-writing'>{{output}}</p>
-        </div>
-    </nb-card-footer>
-</nb-card>
-<nb-card id="results">
-</nb-card>
+<nb-layout>
+    <nb-layout-column>
+        <h1>MadLibs</h1>
+        <nb-card>
+            <nb-card-body>
+                <form (submit)="onSubmit(commentForm)" #commentForm="ngForm">
+                    <mat-form-field>
+                        <input matInput type="text" placeholder="Title" name="title" [ngModel] #title="ngModel">
+                        <mat-error *ngIf="title.invalid">Please enter valid title.</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <textarea matInput rows="4" placeholder="Story" name="content" required [ngModel] #content="ngModel"></textarea>
+                        <mat-error *ngIf="content.invalid">Please enter some content.</mat-error>
+                    </mat-form-field>
+                
+                    
+                    <input matInput type="text">
+                    <mat-form-field id="select">
+                            <mat-label>Story Type</mat-label>
+                            <mat-select required name="storyModesRequired" [(ngModel)]="storyModesRequired" (selectionChange)="changeStoryMode($event.value)" required>
+                            <mat-option *ngFor="let story of storyModes" [value]="story.value">
+                                {{story.viewValue}}
+                            </mat-option>
+                            </mat-select>
+                    </mat-form-field>
+                    <button mat-raised-button color="accent" type="submit">Create!</button>
+                </form>
+            </nb-card-body>
+            <nb-card-footer id="story-background">
+                <div>
+                    <h2 id="story-title">{{titleOfStory}}</h2>
+                    <p id='story-writing'>{{output}}</p>
+                </div>
+            </nb-card-footer>
+        </nb-card>
+        <nb-card id="results">
+        </nb-card>
+    </nb-layout-column>
+</nb-layout>

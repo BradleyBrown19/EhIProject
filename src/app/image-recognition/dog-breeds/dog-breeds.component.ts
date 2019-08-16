@@ -6,11 +6,14 @@ import { Router } from '@angular/router';
 import { ImageRecognitionService } from '../image-recognition.service';
 import { elementStart } from '@angular/core/src/render3';
 import { Subscription } from 'rxjs';
+import { environment } from 'src/environments/environment';
+
+const pythonApi = environment.pythonUrl;
 
 @Component({
     selector: 'dog-breeds',
     templateUrl: './dog-breeds.component.html',
-    styleUrls: ['./dog-breeds.component.css']
+    styleUrls: ['./dog-breeds.component.scss']
 })
 export class DogBreeds implements OnInit {
     form: FormGroup;
@@ -18,7 +21,7 @@ export class DogBreeds implements OnInit {
     prediction: {'label': string, 'confidence': Number};
     predictionLabel: string;
     predictionConfidence: Number;
-    imageRecognitionURL: string = "http://127.0.0.1:5000/predict-dogs";
+    imageRecognitionURL: string = pythonApi + "/predict-painter";
     private resultsSub: Subscription;
 
     constructor (private http: HttpClient, private router: Router, public imageRecognitionService: ImageRecognitionService) {}
@@ -33,6 +36,7 @@ export class DogBreeds implements OnInit {
 
         this.resultsSub = this.imageRecognitionService.getResultsUpdateListener()
             .subscribe((predictions: {label: string, confidence: Number}) => {
+                console.log(predictions.label);
                 this.predictionLabel = predictions.label;
                 this.predictionConfidence = predictions.confidence;
             });

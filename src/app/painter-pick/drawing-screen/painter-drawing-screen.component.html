@@ -1,0 +1,56 @@
+<nb-layout>
+    <nb-layout-column>
+            <h1>Painter Picker</h1>
+            <nb-card id="background">
+            <nb-card-header>
+            </nb-card-header>
+            <div id="container-canvas">
+            <mat-grid-list cols="2" rowHeight="200px">
+                <mat-grid-tile [rowspan]="3"><canvas #canvas id="canvas"></canvas></mat-grid-tile>
+                <mat-grid-tile [rowspan]="3">
+                    <h2><h3 id="message">Trying to paint like: {{currentPic}} </h3><br><img [src]="currentImg" height=200><br>
+                    
+                    <mat-form-field id="select">
+                            <mat-label>Background Color (resets canvas)</mat-label>
+                            <mat-select required name="backgroundColor" [(ngModel)]="backgroundColor" (selectionChange)="changeBackground()" required>
+                              <mat-option *ngFor="let color of colors" [value]="color.value">
+                                {{color.viewValue}}
+                              </mat-option>
+                            </mat-select>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field id="select">
+                            <mat-label>Brush Color</mat-label>
+                            <mat-select required name="brushColor" [(ngModel)]="strokeColor" (selectionChange)="changeArtist()" required>
+                              <mat-option *ngFor="let color of colors" [value]="color.value">
+                                {{color.viewValue}}
+                              </mat-option>
+                            </mat-select>
+                    </mat-form-field>
+                </h2>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <h2>Guesses:</h2>
+                        <h2 *ngIf="guessedPainters != undefined">
+                                <ul>
+                                    <div *ngFor="let painter of guessedPainters">
+                                    <li>{{painter}}</li>
+                                    </div>
+                                </ul>
+                            </h2>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <button mat-raised-button (click)="changeArtist()" color="primary">Change Artist</button>
+                </mat-grid-tile>
+            </mat-grid-list>
+            </div>
+            <nb-card-footer>
+
+            </nb-card-footer>
+            </nb-card>
+            <div>
+            <button mat-raised-button type="submit" (click)="resetCanvas()">Reset Canvas</button>
+            <end-game-modal></end-game-modal>
+            </div>            
+    </nb-layout-column>
+</nb-layout>

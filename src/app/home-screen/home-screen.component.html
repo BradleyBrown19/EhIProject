@@ -2,66 +2,82 @@
 <nb-layout-column>
 <nb-card>
     <h2>Feature of the Week</h2>
-    <img [src]="weeklyImage" height="200" width="220">
+    <img [src]="weeklyImage" height="200" width="360">
     <h2>{{weeklyfeature}}</h2>
-    <button mat-raised-button [routerLink]="routerLink">Try it out!</button>
+    <button id="featureButton" mat-raised-button [routerLink]="routerLink">Try it out!</button>
 </nb-card>
 <nb-card>
     <nb-card-header>Games</nb-card-header>
     <drag-scroll>
+        <button routerLink="pictionarAI-intro">
         <nb-card class="carousel-item" drag-scroll-item>
             <ul>
-                <li><i class="fas fa-paint-brush"></i></li>
+                <li><i class="fas fa-camera"></i></li>
                 <li>PictionarAI</li>
             </ul>
         </nb-card>
+        </button>
+        <button routerLink="/madlibs-intro">
+            <nb-card class="carousel-item" drag-scroll-item>
+                <ul>
+                    <li><i class="fas fa-book"></i></li>
+                    <li>AI Mad Libs</li>
+                </ul>
+            </nb-card>
+        </button>
+        <button routerLink="rps-preview">
         <nb-card class="carousel-item" drag-scroll-item>
             <ul>
                 <li><i class="fas fa-hand-scissors"></i></li>
                 <li>Rock, paper, scissors</li>
             </ul>
         </nb-card>
-        <nb-card class="carousel-item" drag-scroll-item>
-            <ul>
-                <li><i class="fas fa-camera"></i></li>
-                <li>Camera</li>
-            </ul>
-        </nb-card>
-        <nb-card class="carousel-item" drag-scroll-item>
-            <ul>
-                <li><i class="fas fa-file-word"></i></li>
-                <li>AI Mad Libs</li>
-            </ul>
-        </nb-card>
+        </button>
+        <button routerLink="painter-intro">
+            <nb-card class="carousel-item" drag-scroll-item>
+                <ul>
+                    <li><i class="fas fa-paint-brush"></i></li>
+                    <li>Copy Painter</li>
+                </ul>
+            </nb-card>
+            </button>
     </drag-scroll>
 </nb-card>
 <nb-card>
     <nb-card-header>Projects</nb-card-header>
     <drag-scroll>
+        <button routerLink="/animation">
+        <nb-card class="carousel-item" drag-scroll-item>
+            <ul>
+                <li><i class="fas fa-user"></i></li>
+                <li>Animate Me!</li>
+            </ul>
+        </nb-card>
+        </button>
+        <button routerLink="/summer">
         <nb-card class="carousel-item" drag-scroll-item>
             <ul>
                 <li><i class="fas fa-dog"></i></li>
-                <li>AI Mad Libs</li>
+                <li>Dog Generator</li>
             </ul>
         </nb-card>
-        <nb-card class="carousel-item" drag-scroll-item>
-            <ul>
-                <li><i class="fas fa-apple-alt"></i></li>
-                <li>AI Mad Libs</li>
-            </ul>
-        </nb-card>
-        <nb-card class="carousel-item" drag-scroll-item>
-            <ul>
-                <li><i class="fas fa-camera"></i></li>
-                <li>AI Mad Libs</li>
-            </ul>
-        </nb-card>
-        <nb-card class="carousel-item" drag-scroll-item>
-            <ul>
-                <li><i class="fas fa-file-word"></i></li>
-                <li>AI Mad Libs</li>
-            </ul>
-        </nb-card>
+        </button>
+        <button routerLink="/age">
+            <nb-card class="carousel-item" drag-scroll-item>
+                <ul>
+                    <li><i class="fas fa-baby"></i></li>
+                    <li>Age Guesser</li>
+                </ul>
+            </nb-card>
+        </button>
+        <button routerLink="/dog-breeds">
+            <nb-card class="carousel-item" drag-scroll-item>
+                <ul>
+                    <li><i class="fas fa-bone"></i></li>
+                    <li>Dog Classifier</li>
+                </ul>
+            </nb-card>
+        </button>
     </drag-scroll>
 </nb-card>
 <nb-card>
@@ -75,8 +91,4 @@
     </button>
 </nb-card>
 </nb-layout-column>
-<nb-layout-footer>
-    Copyright @ Bradley Brown 2019. All rights reserverd. 
-</nb-layout-footer>
-
 </nb-layout>

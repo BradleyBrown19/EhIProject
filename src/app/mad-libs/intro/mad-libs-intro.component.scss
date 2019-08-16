@@ -1,0 +1,34 @@
+@import "../../../variables.scss";
+
+body {
+    margin: 0px;
+}
+
+nb-card {
+    padding: 1em;
+    background-color: $main-color;
+}
+
+mat-expansion-panel {
+    color: white;
+    background-color: $main-color;
+}
+
+h1 {
+    text-align: center;
+    padding: 0.5em;
+    color: white
+}
+
+i {
+    font-size: 10em;
+    margin: auto;
+    color: $accent-secondary;
+    padding-bottom: 0.3em;
+}
+
+button {
+    margin: auto;
+    background-color: #FF7F50;
+    width: 10%;
+}

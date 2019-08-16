@@ -1,0 +1,18 @@
+@import "../../../variables.scss";
+mat-card {
+    width: 80%;
+    margin: auto;
+}
+
+text-area, mat-form-field {
+    width: 100%
+}
+
+#thread {
+    width: 20%;
+}
+
+#title {
+    width: 20%;
+    margin: auto;
+}

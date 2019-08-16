@@ -33,7 +33,6 @@ router.put("/:id", (req, res, next) =>  {
         topic: req.body.topic,
     });
     Comment.updateOne({_id: req.params.id}, comment).then(result => {
-        console.log(result);
         res.status(200).json({message: "Comment updated"});
     })
 });
@@ -51,7 +50,7 @@ router.get("", (req, res, next) => {
             .limit(pageSize);
     }
 
-    if (topic != 'all') {
+    if (topic == 'suggestions' || topic == 'general' || topic == 'feedback' ) {
         commentQuery.where('topic').equals(topic)
     }
 

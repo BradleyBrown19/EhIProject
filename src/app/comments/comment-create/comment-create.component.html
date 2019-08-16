@@ -1,25 +1,30 @@
-<mat-card>
-    <h1>New Comment</h1>
-    <p>Please enter any feedback or ideas for future games!</p>
-<form (submit)="onSavePost(commentForm)" #commentForm="ngForm">
-    <mat-form-field id="thread">
-        <mat-select required placeholder="Thread" name="topic" [(ngModel)]="topic" (selectionChange)="changeTopic($event.value)" required>
-            <mat-option *ngFor="let topic of topics" [value]="topic.value">
-                {{topic.viewValue}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field> <br>
-    <mat-form-field id="title">
-        <input matInput type="text" placeholder="Title" name="title" [ngModel]="comment?.title" required #title="ngModel">
-        <mat-error *ngIf="title.invalid">Please enter valid title.</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-        <textarea matInput rows="10" placeholder="Comment" name="content" [ngModel]="comment?.content" required #content="ngModel"></textarea>
-        <mat-error *ngIf="content.invalid">Please enter some content.</mat-error>
-    </mat-form-field>
-
-    
-    <input matInput type="text">
-    <button mat-raised-button color="accent" type="submit">Post</button>
-</form>
-</mat-card>
+<nb-layout>
+    <nb-layout-footer>
+            <mat-card>
+                    <h1>New Comment</h1>
+                    <p>Please enter any feedback or ideas for future games!</p>
+                <form (submit)="onSavePost(commentForm)" #commentForm="ngForm">
+                    <mat-form-field id="thread">
+                        <mat-select required placeholder="Thread" name="topic" [(ngModel)]="topic" (selectionChange)="changeTopic($event.value)" required>
+                            <mat-option *ngFor="let topic of topics" [value]="topic.value">
+                                {{topic.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field> <br>
+                    <mat-form-field id="title">
+                        <input matInput type="text" placeholder="Title" name="title" [ngModel]="comment?.title" required #title="ngModel">
+                        <mat-error *ngIf="title.invalid">Please enter valid title.</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <textarea matInput rows="10" placeholder="Comment" name="content" [ngModel]="comment?.content" required #content="ngModel"></textarea>
+                        <mat-error *ngIf="content.invalid">Please enter some content.</mat-error>
+                    </mat-form-field>
+                
+                    
+                    <input matInput type="text">
+                    <button mat-raised-button color="accent" type="submit">Post</button>
+                </form>
+                </mat-card>
+                
+    </nb-layout-footer>
+</nb-layout>

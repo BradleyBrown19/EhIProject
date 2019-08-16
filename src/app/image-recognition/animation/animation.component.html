@@ -1,7 +1,7 @@
 <h1>Animate me!</h1>
 <nb-card id="buttons">
     <nb-card-body>
-        <p>Upload an image below to have it classified!</p>
+        <p>Upload an image below to have it animated</p>
         <form [formGroup]="form" (submit)="analyzeImage()">
                 <div>
                     <button (click)="filePicker.click()" mat-stroke-button color="primary" type="button">Pick Image</button>
@@ -30,7 +30,7 @@
            Network Details
         </mat-expansion-panel-header>
         <ul>
-            <li>Type: UNET-UNIT (Custom created architecture see: INSERT BLOG POST URL)</li>
+            <li>Type: UNET-UNIT (Custom created architecture see <a href="https://medium.com/@theehiproject/unet-unit-for-fast-unsupervised-image2image-translation-using-fastai-e366408eddb4">here</a>)</li>
             <li>Time to Train: 40 mins</li>
         </ul>
     </mat-expansion-panel>

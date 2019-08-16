@@ -1,0 +1,37 @@
+<div id="wip">
+        <img src="../../../assets/images/wip.png" height="500px">
+</div>
+<nb-card id="buttons" *ngIf="inDeployment">
+    <nb-card-body>
+        <form [formGroup]="form" (submit)="analyzeImage()">
+                <div>
+                    
+                </div>
+                <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview && form.get('image').valid">
+                        <img [src]="imagePreview" [alt]="form.value.title">
+                </div>
+                <button mat-raised-button color="accent" type="submit">Generate dog!</button>
+            </form>
+    </nb-card-body>
+</nb-card>
+<nb-card id="results" *ngIf="!isImageLoading && inDeployment">
+    <div>
+            <img [src]="imageToShow" id="resultImage"
+            alt="Result Image"
+            *ngIf="!isImageFailed; else noImageFound">
+            <ng-template #noImageFound>
+                    <h1 style="margin: auto;">Error</h1>
+               </ng-template>
+    </div>
+</nb-card>
+<mat-accordion multi="true" *ngIf="inDeployment">
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+           Network Details
+        </mat-expansion-panel-header>
+        <ul>
+            <li>Type: WGAN with gradient clipping and consistency term</li>
+            <li>Time to Train: 5 hours</li>
+        </ul>
+    </mat-expansion-panel>
+</mat-accordion>

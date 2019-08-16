@@ -1,37 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NbSearchService } from '@nebular/theme';
 
 @Component({
     selector: 'header',
     templateUrl: './header.component.html',
-    styleUrls: ['./header.component.css']
+    styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
-    items = [
-        {
-          title: 'Profile',
-          expanded: true,
-          children: [
-            {
-              title: 'Change Password',
-              link: [], // goes into angular `routerLink`
-            },
-            {
-              title: 'Privacy Policy',
-              ulr: '#', // goes directly into `href` attribute
-            },
-            {
-              title: 'Logout',
-              link: [],
-            },
-          ],
-        },
-        {
-          title: 'Shopping Bag',
-          link: [],
-        },
-        {
-          title: 'Orders',
-          link: [],
-        },
-      ];
+export class HeaderComponent{
+
+
 }

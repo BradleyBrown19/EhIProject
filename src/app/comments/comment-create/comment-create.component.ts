@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 @Component({
     selector: 'app-comment-create',
     templateUrl: './comment-create.component.html',
-    styleUrls: ['./comment-create.component.css']
+    styleUrls: ['./comment-create.component.scss']
 })
 export class CommentCreateComponent implements OnInit {
     private mode = 'create';
@@ -18,15 +18,11 @@ export class CommentCreateComponent implements OnInit {
 
     constructor(public commentsService: CommentService, public route: ActivatedRoute, private router: Router) {}
 
-    topics = [
-        {value: 'suggestions', viewValue: 'Suggestions'},
-        {value: 'feedback', viewValue: 'Feedback'},
-        {value: 'general', viewValue: 'General'},
-      ];
-
     changeTopic(value) {
         this.topic = value
     }
+
+    topics: Object[];
 
     ngOnInit() {
         this.route.paramMap.subscribe((paramMap: ParamMap) => {
@@ -39,6 +35,13 @@ export class CommentCreateComponent implements OnInit {
                 this.commentId = null;
             }
         });
+
+        this.topics = [
+            {value: 'suggestions', viewValue: 'Suggestions'},
+            {value: 'feedback', viewValue: 'Feedback'},
+            {value: 'general', viewValue: 'General'},
+            {value: 'all', viewValue: 'All'},
+          ];
     }
 
     onSavePost(form: NgForm) {

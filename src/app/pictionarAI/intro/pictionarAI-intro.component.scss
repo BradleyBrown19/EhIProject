@@ -1,0 +1,59 @@
+@import "../../../variables.scss";
+
+body {
+    margin: 0px;
+}
+
+nb-card {
+    padding: 1em;
+    background-color: $main-color;
+    color: white;
+}
+
+mat-expansion-panel {
+    color: white;
+    background-color: $main-color;
+}
+
+h1 , h3 {
+    text-align: center;
+    padding: 0.5em;
+    color: white;
+    border-bottom: 1px solid black;
+}
+
+h3 {
+    text-align: left;
+    padding: 0em;
+    font-size: 1.5em;
+}
+
+i {
+    font-size: 10em;
+    margin: auto;
+    color: $accent-secondary;
+    padding-bottom: 0.3em;
+}
+
+button {
+    margin: auto;
+    background-color: $accent-color;
+    width: 10%;
+}
+
+#icon {
+    border: black 2px solid;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0.3em;
+}
+
+ul li, h2{
+    color: white;
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+#instructions {
+    width: 10px
+}
