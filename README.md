@@ -2,7 +2,7 @@
 
 Front end and backend for www.ehigames.ca
 
-## What is Eh I Games
+## What is Eh I Games?
 Eh I Games are a collection of minigames coded in javascript that make use of self built and trained neural network models. In total, there are 4 games and 2 projects:
 
 1. PictionarAI
