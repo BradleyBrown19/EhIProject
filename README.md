@@ -1,27 +1,19 @@
 # EhiGames
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+Front end and backend for www.ehigames.ca
 
-## Development server
+## What is Eh I Games
+Eh I Games are a collection of minigames coded in javascript that make use of self built and trained neural network models. In total, there are 4 games and 2 projects:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. PictionarAI
+1. Rock, paper, scissors
+1. Madlibs
+1. Painter panic
+1. Age classifier
+1. Dog Classifier
 
-## Code scaffolding
+With more games on the way. There is also a comment section and self written articles all related to AI. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tech Stack
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+This project was made using the MEAN stack (Angular, Node, MongoDB and Express). This website takes advantage of self made models coded in Tensorflow and Pytorch such as CNNs, RNNs and GANs. 
