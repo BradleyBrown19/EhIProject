@@ -1,28 +1,31 @@
 <nb-layout>
         <nb-layout-column>
-        <nb-card>
-            <h1>Painter Picker</h1>
-            <i class="fas fa-paint-brush"></i>
-            <button mat-raised-button routerLink="/painter-drawing-canvas">Try it out!</button>
-        </nb-card>
+                <nb-card>
+                        <h1>Painter Party</h1>
+                        <mat-grid-list cols="5" rowHeight="500px">
+                            <mat-grid-tile [colspan]="2" id="instructions">
+                                <nav>
+                                    <ul>
+                                        <h2>Instructions</h2>
+                                        <li>When you click 'Try it out!' on this page it will take you to another page with a canvas</li>
+                                        <li>There will be a canvas for you to create your masterpiece</li>
+                                        <li>The AI will constantly make guesses on what artist your painting looks like, this will appear below the canvas!</li>
+                                        <li>Try to paint like the suggested painter on the right!</li>
+                                    </ul>
+                                </nav>
+                            </mat-grid-tile>
+                            <mat-grid-tile [colspan]="3">
+                                <i id="icon" class="fas fa-paint-brush"></i>
+                            </mat-grid-tile>
+                        </mat-grid-list>
+                        <button mat-raised-button routerLink="/painter-drawing-canvas">Try it out!</button>
+                    </nb-card>
         <mat-accordion multi="true">
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                    Instructions
-                </mat-expansion-panel-header>
-                <ul>
-                    <li>When you click 'Try it out!' on this page it will take you to another page with a canvas</li>
-                    <li>There will be a canvas for you to create your masterpiece</li>
-                    <li>The AI will constantly make guesses on what artist your painting looks like, this will appear below the canvas!</li>
-                    <li>Try to paint like the suggested painter on the right!</li>
-                </ul>
-            
-            </mat-expansion-panel>
             <mat-expansion-panel>
                     <mat-expansion-panel-header>
                         Neural net details
                     </mat-expansion-panel-header>
-                    <ul>
+                    <ul id="details">
                             <li>Accuracy: 92%</li>
                             <li>Type: Convolutional/Fully Connected</li>
                             <li>Time to Train: 5 mins</li>

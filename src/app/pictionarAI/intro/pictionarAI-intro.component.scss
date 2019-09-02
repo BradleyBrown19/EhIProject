@@ -33,19 +33,21 @@ i {
     margin: auto;
     color: $accent-secondary;
     padding-bottom: 0.3em;
+    background-color: $accent-color;
+
 }
 
 button {
     margin: auto;
     background-color: $accent-color;
-    width: 10%;
 }
 
 #icon {
     border: black 2px solid;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
     padding-top: 0.3em;
+    border-radius:  10px;
 }
 
 ul li, h2{
@@ -57,3 +59,12 @@ ul li, h2{
 #instructions {
     width: 10px
 }
+
+#details {
+    font-size: 0.75em;
+}
+
+@media screen and (max-width: 1100px) {
+    nav ul{height:500px; width: 100%}
+    nav ul{overflow:hidden; overflow-y:scroll; color: black}
+    }

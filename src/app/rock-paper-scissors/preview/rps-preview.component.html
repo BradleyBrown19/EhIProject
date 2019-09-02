@@ -1,29 +1,33 @@
 <nb-layout>
     <nb-layout-column>
-    <nb-card>
-        <h1>Rock, Paper, Scissors!</h1>
-        <i class="fas fa-hand-scissors"></i>
-        <button mat-raised-button routerLink="/rps-game">Try it out!</button>
-    </nb-card>
+            <nb-card>
+                    <h1>Rock, paper, scissors!</h1>
+                    <mat-grid-list cols="5" rowHeight="600px">
+                        <mat-grid-tile [colspan]="3" id="instructions">
+                            <nav>
+                                <ul>
+                                    <h2 id="warning">**Must enable webcam to play**</h2>
+                                    <h2>Instructions</h2>
+                                    <li>To start the game, press the 'Start Game' button (very well labelled) at the top of video. </li>
+                                    <li>At the bottom of the screen, the text will change to rock, then to paper, then scissors. </li>
+                                    <li>After scissors, it is time to make your move! (Make a fist for rock, peace sign for scissors or a flat hand for paper)</li>
+                                    <li>Make sure your hand is in good view of the camera so it can see your move clearly. </li>
+                                    <li>The computer will make a move at the same time and will keep a counter of wins! </li>
+                                </ul>
+                            </nav>
+                        </mat-grid-tile>
+                        <mat-grid-tile [colspan]="2">
+                                <i id="icon" class="fas fa-hand-scissors"></i>
+                        </mat-grid-tile>
+                    </mat-grid-list>
+                    <button mat-raised-button routerLink="/rps-game">Try it out!</button>
+                </nb-card>
     <mat-accordion multi="true">
-        <mat-expansion-panel>
-            <mat-expansion-panel-header>
-                Instructions
-            </mat-expansion-panel-header>
-            <ul>
-                <li>To start the game, press the 'Start Game' button (very well labelled) at the top of video. </li>
-                <li>At the bottom of the screen, the text will change to rock, then to paper, then scissors. </li>
-                <li>After scissors, it is time to make your move! (Make a fist for rock, peace sign for scissors or a flat hand for paper)</li>
-                <li>Make sure your hand is in good view of the camera so it can see your move clearly. </li>
-                <li>The computer will make a move at the same time and will keep a counter of wins! </li>
-            </ul>
-        
-        </mat-expansion-panel>
         <mat-expansion-panel>
                 <mat-expansion-panel-header>
                     Neural net details
                 </mat-expansion-panel-header>
-                <ul>
+                <ul id="details">
                         <li>Accuracy: 93%</li>
                         <li>Type: Convolutional</li>
                         <li>Time to Train: 30 mins</li>

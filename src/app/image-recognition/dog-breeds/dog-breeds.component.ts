@@ -21,7 +21,7 @@ export class DogBreeds implements OnInit {
     prediction: {'label': string, 'confidence': Number};
     predictionLabel: string;
     predictionConfidence: Number;
-    imageRecognitionURL: string = pythonApi + "/predict-painter";
+    imageRecognitionURL: string = pythonApi + "/predict-dogs";
     private resultsSub: Subscription;
 
     constructor (private http: HttpClient, private router: Router, public imageRecognitionService: ImageRecognitionService) {}

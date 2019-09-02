@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: "http://localhost:3000",
-  pythonUrl: "http://ehigamesapi.s3-website.ca-central-1.amazonaws.com"
+  apiUrl: "https://ehigamesbackend.ml",
+  pythonUrl: "http://127.0.0.1:8000"
 };
 
 /*

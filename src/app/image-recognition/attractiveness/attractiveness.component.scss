@@ -1,5 +1,7 @@
+@import "../../../variables.scss";
+
 nb-card, mat-expansion-panel {
-    background-color: rgb(66, 118, 187);
+    background-color: $main-color;
     color: white;
     width: 90%;
     margin: auto;

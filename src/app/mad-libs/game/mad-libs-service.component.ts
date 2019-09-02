@@ -23,12 +23,15 @@ export class TextRecognitionService {
         headers.set('Content-Type', 'application/json; charset=utf-8');
         let finalString: string = "";
 
-        console.log(text);
-
         while (true) {
 
             if (text.indexOf('*') < 0) {
-                finalString += text.substr(1, finalString.length);
+                console.log(text)
+                console.log(text.length)
+                if (text.length == 1) {
+                    break;
+                }
+                finalString += text.substr(0, finalString.length);
                 break;
             }
 

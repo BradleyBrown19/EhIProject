@@ -19,7 +19,7 @@ import { SlotMachineButtonModule } from 'ng-slot-machine-button';
 
 
 import { AppRoutingModule } from './app-routing.module';
-import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbActionsModule, NbCardModule, NbSearchModule, NbMenuModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbActionsModule, NbCardModule, NbSearchModule, NbMenuModule} from '@nebular/theme';
 import { AttractivenessRating } from './image-recognition/attractiveness/attractiveness.component';
 import { DogBreeds } from './image-recognition/dog-breeds/dog-breeds.component';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
@@ -66,7 +66,7 @@ import { EndPainterModal } from './painter-pick/game-over-modal/painter-modal.co
     ArticlesComponent,
     PainterDrawingScreen,
     PainterIntro,
-    EndPainterModal
+    EndPainterModal,
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,7 @@ body {
 nb-card {
     padding: 1em;
     background-color: $main-color;
+    color: white;
 }
 
 mat-expansion-panel {
@@ -14,10 +15,17 @@ mat-expansion-panel {
     background-color: $main-color;
 }
 
-h1 {
+h1 , h3 {
     text-align: center;
     padding: 0.5em;
-    color: white
+    color: white;
+    border-bottom: 1px solid black;
+}
+
+h3 {
+    text-align: left;
+    padding: 0em;
+    font-size: 1.5em;
 }
 
 i {
@@ -25,10 +33,43 @@ i {
     margin: auto;
     color: $accent-secondary;
     padding-bottom: 0.3em;
+    background-color: $accent-color;
+
 }
 
 button {
     margin: auto;
     background-color: $accent-color;
-    width: 10%;
 }
+
+#icon {
+    border: black 2px solid;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+    padding-top: 0.3em;
+    border-radius:  10px;
+}
+
+ul li, h2{
+    color: white;
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+#instructions {
+    width: 10px
+}
+
+#details {
+    font-size: 0.75em;
+}
+
+#warning {
+    color: red;
+}
+
+@media screen and (max-width: 950px) {
+nav ul{height:500px; width: 100%}
+nav ul{overflow:hidden; overflow-y:scroll; color: black}
+}
+

@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://ehiprojectbackend-envconfigured.ebymfwrcwx.us-east-2.elasticbeanstalk.com'
+  apiUrl: 'https://ehigamesbackend.ml',
+  pythonUrl: "https://ehigamesapidomain.ml:443"
 };

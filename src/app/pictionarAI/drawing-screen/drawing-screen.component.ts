@@ -146,9 +146,11 @@ export class DrawingScreen implements AfterViewInit, OnInit {
       })
 
       let file = await promise;
-      
+      console.log(this.imageRecognitionURL);
       this.http.post<{'success': any, 'predictions': {'label': string, 'confidence': Number}}>(this.imageRecognitionURL, sketchImage)
         .subscribe(result => {
+          console.log('result:');
+          console.log(result);
             this.prediction = result.predictions;
             if (this.prediction.label == this.currentPic) {
               this.gameOver(true);
