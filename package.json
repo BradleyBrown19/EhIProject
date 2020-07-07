@@ -46,7 +46,7 @@
     "ngx-drag-scroll": "^7.3.4",
     "ngx-google-map": "^1.0.0",
     "ngx-smart-modal": "^7.1.1",
-    "npm": "^6.9.0",
+    "npm": "^6.14.6",
     "rxjs": "~6.3.3",
     "shivs-angular4-painter": "^1.0.13",
     "simplify-js": "^1.2.3",
