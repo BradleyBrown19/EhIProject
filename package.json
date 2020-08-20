@@ -26,7 +26,7 @@
     "angular-canvas-painter": "^0.6.0",
     "angular-custom-modal": "^1.2.0",
     "angular-ui-carousel": "^0.1.10",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "bcryptjs": "^2.4.3",
     "blueimp-canvas-to-blob": "^3.14.0",
     "body-parser": "^1.18.3",
